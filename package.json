@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/Haris-Mohanty/BloodHub/issues"
   },
-  "homepage": "https://github.com/Haris-Mohanty/BloodHub#readme"
+  "homepage": "https://github.com/Haris-Mohanty/BloodHub#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }
