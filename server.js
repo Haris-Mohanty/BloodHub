@@ -1,10 +1,18 @@
 const express = require("express");
 
-//REST OBJECT
+//***** REST OBJECT ****/
 const app = express();
 
-//PORT
-const PORT = 8080
 
-//LISTEN 
-app.listen(PORT);
+//***** ROUTES ****/
+//1 test routes
+
+
+
+//***** PORT *****/
+const PORT = 8080;
+
+//***** LISTEN ******/
+app.listen(PORT, () => {
+    console.log("Node Server Running");
+});
