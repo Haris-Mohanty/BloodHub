@@ -6,6 +6,7 @@ const app = express();
 
 //***** ROUTES ****/
 //1 test routes
+app.get("/test");
 
 
 
