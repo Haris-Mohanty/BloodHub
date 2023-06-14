@@ -6,3 +6,5 @@ const app = express();
 //PORT
 const PORT = 8080
 
+//LISTEN 
+app.listen(PORT);
