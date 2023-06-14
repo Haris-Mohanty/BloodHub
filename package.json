@@ -1,0 +1,20 @@
+{
+  "name": "bloodhub",
+  "version": "1.0.0",
+  "description": "A BloodHub App.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Haris-Mohanty/BloodHub.git"
+  },
+  "author": "Haris Mohanty",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Haris-Mohanty/BloodHub/issues"
+  },
+  "homepage": "https://github.com/Haris-Mohanty/BloodHub#readme"
+}
