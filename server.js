@@ -12,7 +12,7 @@ const app = express();
 app.use("/api/v1/test", require("./routes/testRoutes"));
 
 //***** PORT *****/
-const PORT = 8080;
+const PORT = process.env.PORT || 8080;
 
 //***** LISTEN ******/
 app.listen(PORT, () => {
