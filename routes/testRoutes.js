@@ -6,3 +6,6 @@ const router = express.Router();
 
 //Routes Create
 router.get("/test", testController);
+
+//Export
+module.exports = router;
