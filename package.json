@@ -19,6 +19,7 @@
   "homepage": "https://github.com/Haris-Mohanty/BloodHub#readme",
   "dependencies": {
     "colors": "^1.4.0",
+    "cors": "^2.8.5",
     "dotenv": "^16.1.4",
     "express": "^4.18.2",
     "mongoose": "^7.3.0",
