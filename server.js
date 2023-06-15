@@ -4,9 +4,13 @@ const colors = require("colors");
 const morgan = require("morgan");
 const cors = require("cors");
 
+//*** MIDDLEWARE */
+app.use(express.json);
+app.use(cors());
+app.use(morgan("dev"));
 
 //Dot Config
-dotenv.config()
+dotenv.config();
 
 //***** REST OBJECT ****/
 const app = express();
