@@ -4,4 +4,4 @@ const express = require("express");
 const router = express.Router();
 
 //Routes Create
-router.get("/test")
+router.get("/test", );
