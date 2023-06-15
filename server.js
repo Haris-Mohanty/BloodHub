@@ -1,5 +1,8 @@
 const express = require("express");
-const env = require("dotenv");
+const dotenv = require("dotenv");
+
+//Dot Config
+dotenv.config()
 
 //***** REST OBJECT ****/
 const app = express();
