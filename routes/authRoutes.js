@@ -4,7 +4,7 @@ const express = require("express");
 const router = express.Router();
 
 //Routes
-router.post
+router.post("/register");
 
 //Exports
 module.exports = router;
