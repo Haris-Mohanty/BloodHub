@@ -1,4 +1,5 @@
 const userModel = require("../models/userModel");
+const bcrypt = require("bcrypt");
 
 const registerController = async (req, res) => {
   try {
@@ -11,7 +12,7 @@ const registerController = async (req, res) => {
         message: "User Already Exist!",
       });
     }
-    
+
   } catch (err) {
     console.log(err);
     res.status(500).send({
