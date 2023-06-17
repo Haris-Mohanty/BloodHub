@@ -37,8 +37,19 @@ const registerController = async (req, res) => {
 };
 
 //***** REGISTER CONTROLLER *****/
-const loginController = (req, res) => {
+const loginController = async (req, res) => {
+  try {
+    //Check User
+    const existingUser = await userModel.findOne({ email: req.body.email });
 
+  } catch (error) {
+    console.log(error);
+    res.status(500).send({
+      success: false,
+      message: "Error In Login API!",
+      error,
+    });
+  }
 };
 
 //****** EXPORT *****/
