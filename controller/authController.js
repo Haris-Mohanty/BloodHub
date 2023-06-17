@@ -81,8 +81,19 @@ const loginController = async (req, res) => {
 };
 
 //****** GET CURRENT USER *******/
-const currentUserController = (req, res) => {
+const currentUserController = async (req, res) => {
+  try {
 
+    const 
+
+  } catch(error){
+    console.log(error);
+    return res.status(500).send({
+      success: false,
+      message: "Unable to Current user!",
+      error
+    });
+  }
 };
 
 
