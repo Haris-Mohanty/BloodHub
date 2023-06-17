@@ -21,11 +21,7 @@ app.use(morgan("dev"));
 
 //***** ROUTES ****/
 app.use("/api/v1/test", require("./routes/testRoutes"));
-//Register || POST
 app.use("/api/v1/auth", require("./routes/authRoutes"));
-//Login || POST
-app.use()
-
 
 
 //***** PORT *****/
