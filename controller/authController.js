@@ -40,7 +40,18 @@ const registerController = async (req, res) => {
 const loginController = async (req, res) => {
   try {
     //Check User
-    const existingUser = await userModel.findOne({ email: req.body.email });
+    const user = await userModel.findOne({ email: req.body.email });
+    if(!user){
+      return res.status(404).send({
+        success: false,
+        message: "Invalid User!",
+      });
+    }
+
+    //Compare Password
+    const comparePassword = await bcrypt.compare(req.body.password, user.password);
+    if()
+
 
   } catch (error) {
     console.log(error);
