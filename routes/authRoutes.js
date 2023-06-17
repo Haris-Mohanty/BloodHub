@@ -10,8 +10,12 @@ const router = express.Router();
 //**** CREATE ROUTES ****/
 //Register || POST
 router.post("/register", registerController);
+
 //Login || POST
 router.post("/login", loginController);
+
+//Get Current User || GET
+router.get();
 
 //**** EXPORT ****/
 module.exports = router;
