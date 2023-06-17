@@ -1,6 +1,7 @@
 const userModel = require("../models/userModel");
 const bcrypt = require("bcrypt");
 
+//***** REGISTER CONTROLLER *****/
 const registerController = async (req, res) => {
   try {
     const existingUser = await userModel.findOne({ email: req.body.email });
@@ -34,4 +35,8 @@ const registerController = async (req, res) => {
   }
 };
 
-module.exports = { registerController };
+//***** REGISTER CONTROLLER *****/
+const loginController = () => {};
+
+//****** EXPORT *****/
+module.exports = { registerController, loginController };
