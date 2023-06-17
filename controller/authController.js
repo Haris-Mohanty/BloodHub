@@ -1,5 +1,6 @@
 const userModel = require("../models/userModel");
 const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
 
 //***** REGISTER CONTROLLER *****/
 const registerController = async (req, res) => {
@@ -37,7 +38,7 @@ const registerController = async (req, res) => {
 
 //***** REGISTER CONTROLLER *****/
 const loginController = (req, res) => {
-  
+
 };
 
 //****** EXPORT *****/
