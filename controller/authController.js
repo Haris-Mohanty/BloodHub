@@ -44,13 +44,20 @@ const loginController = async (req, res) => {
     if(!user){
       return res.status(404).send({
         success: false,
-        message: "Invalid User!",
+        message: "Invalid Credentials!",
       });
     }
 
     //Compare Password
     const comparePassword = await bcrypt.compare(req.body.password, user.password);
-    if()
+    if(!comparePassword){
+      return res.status(500).send({
+        success: false,
+        message: "Invalid Credentials!"
+      });
+    }
+
+    //Create Token
 
 
   } catch (error) {
