@@ -3,6 +3,7 @@ const {
   registerController,
   loginController,
 } = require("../controller/authController");
+const authMiddleware = require("../middleware/authMiddleware");
 
 //ROUTER OBJECT
 const router = express.Router();
@@ -15,7 +16,7 @@ router.post("/register", registerController);
 router.post("/login", loginController);
 
 //Get Current User || GET
-router.get();
+router.get("/current-user", authMiddleware);
 
 //**** EXPORT ****/
 module.exports = router;

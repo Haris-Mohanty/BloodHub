@@ -14,10 +14,12 @@ const registerController = async (req, res) => {
         message: "User Already Exist!",
       });
     }
+
     //Hash password
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(req.body.password, salt);
     req.body.password = hashedPassword;
+
     //Rest Data
     const user = new userModel(req.body);
     await user.save();
@@ -26,6 +28,7 @@ const registerController = async (req, res) => {
       message: "User Registered Successfully!",
       user,
     });
+
   } catch (err) {
     console.log(err);
     res.status(500).send({
@@ -77,5 +80,11 @@ const loginController = async (req, res) => {
   }
 };
 
+//****** GET CURRENT USER *******/
+const currentUserController = (req, res) => {
+
+};
+
+
 //****** EXPORT *****/
-module.exports = { registerController, loginController };
+module.exports = { registerController, loginController, currentUserController };
