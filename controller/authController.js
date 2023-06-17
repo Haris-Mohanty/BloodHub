@@ -58,6 +58,7 @@ const loginController = async (req, res) => {
     }
 
     //Create Token
+    const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET);
 
 
   } catch (error) {
