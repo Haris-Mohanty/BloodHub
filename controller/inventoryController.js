@@ -24,6 +24,7 @@ const createInventoryController = async (req, res) => {
     return res.status(201).send({
       success: true,
       message: "New Blood Record Added!",
+      
     });
   } catch (err) {
     console.log(err);
