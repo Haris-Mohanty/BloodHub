@@ -37,11 +37,14 @@ const createInventoryController = async (req, res) => {
 
 //******* GET INVENTORY RECORDS(BLOOD RECORD) *******/
 const getInventoryController = async (req, res) => {
-  try{
-    
-  } catch(err){
+  try {
+  } catch (err) {
     console.log(err);
-    return
+    return res.status(500).send({
+      success: false,
+      message: "Error in Get All Inventory",
+      err,
+    });
   }
 };
 
