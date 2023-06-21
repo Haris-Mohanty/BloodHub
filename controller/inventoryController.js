@@ -37,7 +37,12 @@ const createInventoryController = async (req, res) => {
 
 //******* GET INVENTORY RECORDS(BLOOD RECORD) *******/
 const getInventoryController = async (req, res) => {
-  
+  try{
+    
+  } catch(err){
+    console.log(err);
+    return
+  }
 };
 
 //****** EXPORT *****/
