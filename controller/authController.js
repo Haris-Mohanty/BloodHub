@@ -39,7 +39,7 @@ const registerController = async (req, res) => {
   }
 };
 
-//***** REGISTER CONTROLLER *****/
+//***** LOGIN CONTROLLER *****/
 const loginController = async (req, res) => {
   try {
     //Check User
@@ -48,6 +48,14 @@ const loginController = async (req, res) => {
       return res.status(404).send({
         success: false,
         message: "Invalid Credentials!",
+      });
+    }
+
+    //Check Role
+    if(user.role !== req.body.role) {
+      return res.status(500).send({
+        success: false,
+        message: "Role Doesn't Match!"
       });
     }
 
