@@ -35,6 +35,8 @@ const createInventoryController = async (req, res) => {
   }
 };
 
+//******* GET INVENTORY RECORDS(BLOOD RECORD) *******/
+const getInventoryController = () => {};
 
 //****** EXPORT *****/
-module.exports = { createInventoryController };
+module.exports = { createInventoryController, getInventoryController };

@@ -1,6 +1,9 @@
 const express = require("express");
 const authMiddleware = require("../middleware/authMiddleware");
-const { createInventoryController } = require("../controller/inventoryController");
+const {
+  createInventoryController,
+  getInventoryController,
+} = require("../controller/inventoryController");
 
 //ROUTER OBJECT
 const router = express.Router();
