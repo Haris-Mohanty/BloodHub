@@ -10,6 +10,6 @@ const router = express.Router();
 router.post("/create-inventory", authMiddleware, createInventoryController);
 
 //Get All Blood Records(Inventory Find)
-router.get("/get-inventory", authMiddleware, )
+router.get("/get-inventory", authMiddleware, getInventoryController);
 
 module.exports = router;

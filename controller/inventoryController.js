@@ -35,5 +35,6 @@ const createInventoryController = async (req, res) => {
   }
 };
 
+
 //****** EXPORT *****/
 module.exports = { createInventoryController };
