@@ -38,7 +38,14 @@ const createInventoryController = async (req, res) => {
 //******* GET INVENTORY RECORDS(BLOOD RECORD) *******/
 const getInventoryController = async (req, res) => {
   try {
-    const inventory = await inventoryModel.find({});
+    const inventory = await inventoryModel.find({
+      organization: req.body.userId,
+    });
+    return res.status(200).send({
+      success: true,
+      message: "Get all Records Successfully",
+      inventory,
+    });
   } catch (err) {
     console.log(err);
     return res.status(500).send({
