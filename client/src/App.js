@@ -1,7 +1,7 @@
 function App() {
   return (
     <div>
-      <h1>BloodHub</h1>
+      <h1 class="text-danger">BloodHub</h1>
     </div>
   );
 }
