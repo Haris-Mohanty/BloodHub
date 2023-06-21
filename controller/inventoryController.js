@@ -24,7 +24,6 @@ const createInventoryController = async (req, res) => {
     return res.status(201).send({
       success: true,
       message: "New Blood Record Added!",
-      
     });
   } catch (err) {
     console.log(err);
@@ -41,7 +40,7 @@ const getInventoryController = async (req, res) => {
   try {
     const inventory = await inventoryModel
       .find({
-        organization: req.body.userId,
+        organization: req.body._id,
       })
       .populate("donor")
       .populate("hospital")
