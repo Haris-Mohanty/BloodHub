@@ -38,9 +38,13 @@ const createInventoryController = async (req, res) => {
 //******* GET INVENTORY RECORDS(BLOOD RECORD) *******/
 const getInventoryController = async (req, res) => {
   try {
-    const inventory = await inventoryModel.find({
-      organization: req.body.userId,
-    });
+    const inventory = await inventoryModel
+      .find({
+        organization: req.body.userId,
+      })
+      .populate("donor")
+      .populate("hospital")
+      .sort({ createdAt: -1 });
     return res.status(200).send({
       success: true,
       message: "Get all Records Successfully",
