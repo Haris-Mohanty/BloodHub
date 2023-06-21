@@ -2,11 +2,9 @@ import React from "react";
 
 const Register = () => {
   return (
-    <>
-      <div className="row">
-        <div></div>
-      </div>
-    </>
+    <div>
+      <h1>Register Page</h1>
+    </div>
   );
 };
 
