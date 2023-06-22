@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import InputType from "./InputType";
 
-const Form = ({ submitBtn, formTitle }) => {
+const Form = ({ formType, submitBtn, formTitle }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [role, setRole] = useState("donor");
@@ -16,6 +16,11 @@ const Form = ({ submitBtn, formTitle }) => {
       <form>
         <h1 className="text-center">{formTitle}</h1>
         <hr />
+        {/* SWITCH STATEMENT */}
+        {(() => {
+          
+        })()}
+
         <InputType
           labelText={"Email"}
           labelFor={"forEmail"}
