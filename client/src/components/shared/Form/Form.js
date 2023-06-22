@@ -14,7 +14,7 @@ const Form = ({ formType, submitBtn, formTitle }) => {
   const [phone, setPhone] = useState("");
   return (
     <>
-      <form>
+      <form onSubmit={}>
         <h1 className="text-center">{formTitle}</h1>
         <hr />
         <div className="d-flex mb-3">
