@@ -4,6 +4,13 @@ import InputType from "./InputType";
 const Form = ({ submitBtn, formTitle }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [role, setRole] = useState("donor");
+  const [name, setName] = useState("");
+  const [organisationName, setOrganisationName] = useState("");
+  const [hospitalName, setHospitalName] = useState("");
+  const [website, setWebsite] = useState("");
+  const [address, setAddress] = useState("");
+  const [phone, setPhone] = useState("");
   return (
     <>
       <form>

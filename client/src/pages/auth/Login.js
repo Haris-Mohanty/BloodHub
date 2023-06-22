@@ -5,7 +5,7 @@ const Login = () => {
   return (
     <>
       <div className="container-fluid">
-        <div className="row">
+        <div className="row g-0">
           <div className="col-md-8 form-banner form-banner">
             <img src="./assets/images/login.jpg" />
           </div>
