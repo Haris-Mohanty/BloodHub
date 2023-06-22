@@ -27,7 +27,9 @@ const Form = ({ formType, submitBtn, formTitle }) => {
               onChange={(e) => setRole(e.target.value)}
               defaultChecked
             />
-            <label htmlFor="donorRadio" className="form-check-label">Donor</label>
+            <label htmlFor="donorRadio" className="form-check-label">
+              Donor
+            </label>
           </div>
           <div className="form-check ms-3">
             <input
@@ -38,7 +40,9 @@ const Form = ({ formType, submitBtn, formTitle }) => {
               value={"admin"}
               onChange={(e) => setRole(e.target.value)}
             />
-            <label htmlFor="adminRadio" className="form-check-label">Admin</label>
+            <label htmlFor="adminRadio" className="form-check-label">
+              Admin
+            </label>
           </div>
           <div className="form-check ms-3">
             <input
@@ -49,7 +53,9 @@ const Form = ({ formType, submitBtn, formTitle }) => {
               value={"hospital"}
               onChange={(e) => setRole(e.target.value)}
             />
-            <label htmlFor="hospitalRadio" className="form-check-label">Hospital</label>
+            <label htmlFor="hospitalRadio" className="form-check-label">
+              Hospital
+            </label>
           </div>
           <div className="form-check ms-3">
             <input
@@ -60,7 +66,9 @@ const Form = ({ formType, submitBtn, formTitle }) => {
               value={"organisation"}
               onChange={(e) => setRole(e.target.value)}
             />
-            <label htmlFor="orgRadio" className="form-check-label">Organisation</label>
+            <label htmlFor="orgRadio" className="form-check-label">
+              Organisation
+            </label>
           </div>
         </div>
         {/* SWITCH STATEMENT */}
@@ -91,6 +99,37 @@ const Form = ({ formType, submitBtn, formTitle }) => {
             case formType === "register": {
               return (
                 <>
+                  {(role === "admin" || role === "donor") && (
+                    <InputType
+                      labelText={"Name"}
+                      labelFor={"forName"}
+                      inputType={"text"}
+                      name={"name"}
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
+                    />
+                  )}
+                  {role === "organisation" && (
+                    <InputType
+                      labelText={"Organisation Name"}
+                      labelFor={"forOrganisationName"}
+                      inputType={"text"}
+                      name={"organisationName"}
+                      value={organisationName}
+                      onChange={(e) => setOrganisationName(e.target.value)}
+                    />
+                  )}
+                  {role === "hospital" && (
+                    <InputType
+                      labelText={"Hospital Name"}
+                      labelFor={"forHospitalName"}
+                      inputType={"text"}
+                      name={"hospitalName"}
+                      value={hospitalName}
+                      onChange={(e) => setHospitalName(e.target.value)}
+                    />
+                  )}
+
                   <InputType
                     labelText={"Email"}
                     labelFor={"forEmail"}
@@ -106,30 +145,6 @@ const Form = ({ formType, submitBtn, formTitle }) => {
                     name={"password"}
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
-                  />
-                  <InputType
-                    labelText={"Name"}
-                    labelFor={"forName"}
-                    inputType={"text"}
-                    name={"name"}
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                  />
-                  <InputType
-                    labelText={"Organisation Name"}
-                    labelFor={"forOrganisationName"}
-                    inputType={"text"}
-                    name={"organisationName"}
-                    value={organisationName}
-                    onChange={(e) => setOrganisationName(e.target.value)}
-                  />
-                  <InputType
-                    labelText={"Hospital Name"}
-                    labelFor={"forHospitalName"}
-                    inputType={"text"}
-                    name={"hospitalName"}
-                    value={hospitalName}
-                    onChange={(e) => setHospitalName(e.target.value)}
                   />
                   <InputType
                     labelText={"Website"}
