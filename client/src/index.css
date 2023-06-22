@@ -16,3 +16,8 @@
   justify-content: center;
   min-height: 100vh;
 }
+.form-control {  
+  -webkit-box-shadow: none!important;
+  outline: -webkit-focus-ring-color auto 0px!important;
+  cursor: pointer;
+} 

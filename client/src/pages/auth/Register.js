@@ -7,9 +7,9 @@ const Register = () => {
       <div className="container-fuild">
         <div className="row g-0">
           <div className="col-md-8 form-banner">
-            <img src="./assets/images/register.jpg" />
+            <img src="./assets/images/reg.jfif" />
           </div>
-          <div className="col-md-4 form-container">
+          <div className="col-md-4 shadow-sm form-container">
             <Form
               formTitle={"Register Page"}
               submitBtn={"Register"}
