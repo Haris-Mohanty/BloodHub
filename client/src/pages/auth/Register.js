@@ -7,10 +7,10 @@ const Register = () => {
       <div className="container-fuild">
         <div className="row">
           <div className="col-md-8">
-            <img src="./assets" />
+            <img src="./assets/images/register.jpg" className="w-100" />
           </div>
-          <div className="col-md-4">
-            <Form />
+          <div className="col-md-4 form-container">
+            <Form formTitle={"Register Page"} submitBtn={"Register"} />
           </div>
         </div>
       </div>
