@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-import InputType from "./inputType";
+import InputType from "./InputType";
 
-const Form = ({ submitBtn }) => {
+const Form = ({ submitBtn, formTitle }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   return (
     <>
       <form>
-        <h1 className="text-center">Login Page</h1>
+        <h1 className="text-center">{formTitle}</h1>
         <hr />
         <InputType
           labelText={"Email"}
