@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import InputType from "./inputType";
 
-const Form = () => {
+const Form = ({ submitBtn }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   return (
@@ -26,7 +26,7 @@ const Form = () => {
           onChange={(e) => setPassword(e.target.value)}
         />
         <div className="d-flex">
-          <button>
+          <button className="btn btn-primary" type="submit">
             {submitBtn}
           </button>
         </div>
