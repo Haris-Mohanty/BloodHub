@@ -32,8 +32,56 @@ const Form = ({ submitBtn, formTitle }) => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
+        <InputType
+          labelText={"Name"}
+          labelFor={"forName"}
+          inputType={"text"}
+          name={"name"}
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+        <InputType
+          labelText={"Organisation Name"}
+          labelFor={"forOrganisationName"}
+          inputType={"text"}
+          name={"organisationName"}
+          value={organisationName}
+          onChange={(e) => setOrganisationName(e.target.value)}
+        />
+        <InputType
+          labelText={"Hospital Name"}
+          labelFor={"forHospitalName"}
+          inputType={"text"}
+          name={"hospitalName"}
+          value={hospitalName}
+          onChange={(e) => setHospitalName(e.target.value)}
+        />
+        <InputType
+          labelText={"Website"}
+          labelFor={"forWebsite"}
+          inputType={"text"}
+          name={"website"}
+          value={website}
+          onChange={(e) => setWebsite(e.target.value)}
+        />
+        <InputType
+          labelText={"Address"}
+          labelFor={"forAddress"}
+          inputType={"text"}
+          name={"address"}
+          value={address}
+          onChange={(e) => setAddress(e.target.value)}
+        />
+        <InputType
+          labelText={"Phone"}
+          labelFor={"forPhone"}
+          inputType={"number"}
+          name={"phone"}
+          value={phone}
+          onChange={(e) => setPhone(e.target.value)}
+        />
         <div className="d-flex">
-          <button className="btn btn-primary" type="submit">
+          <button className="btn btn-primary mb-3" type="submit">
             {submitBtn}
           </button>
         </div>
