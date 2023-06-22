@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import InputType from "./InputType";
+import { Link } from "react-router-dom";
 
 const Form = ({ formType, submitBtn, formTitle }) => {
   const [email, setEmail] = useState("");
@@ -176,7 +177,18 @@ const Form = ({ formType, submitBtn, formTitle }) => {
           }
         })()}
 
-        <div className="d-flex">
+        <div className="d-flex justify-content-between">
+          {formType === "login" ? (
+            <p>
+              Not Register Yet! Register 
+              <Link to={"/register"} className="text-decoration-none"> Here !</Link>
+            </p>
+          ) : (
+            <p>
+              Already User, Please 
+              <Link to={"/login"} className="text-decoration-none"> Login !</Link>
+            </p>
+          )}
           <button className="btn btn-primary mb-3" type="submit">
             {submitBtn}
           </button>
