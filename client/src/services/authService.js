@@ -10,18 +10,7 @@ export const handleLogin = (e, email, password, role) => {
   }
 };
 
-export const handleRegister = (
-  e,
-  name,
-  role,
-  email,
-  password,
-  organisationName,
-  hospitalName,
-  website,
-  address,
-  phone
-) => {
+export const handleRegister = (e, name, role, email, password, organisationName, hospitalName, website, address, phone) => {
   e.preventDefault();
   try {
     console.log(
