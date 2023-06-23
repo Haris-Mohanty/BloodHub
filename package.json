@@ -20,6 +20,7 @@
   "dependencies": {
     "bcrypt": "^5.1.0",
     "colors": "^1.4.0",
+    "concurrently": "^8.2.0",
     "cors": "^2.8.5",
     "dotenv": "^16.1.4",
     "express": "^4.18.2",
