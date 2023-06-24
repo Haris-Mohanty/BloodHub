@@ -2,6 +2,7 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 import API from "../../../services/API";
 import { toast } from "react-toastify";
 
+//****** LOGIN **********/
 export const userLogin = createAsyncThunk(
   "auth/login",
   async ({ role, email, password }, { rejectWithValue }) => {
@@ -22,3 +23,6 @@ export const userLogin = createAsyncThunk(
     }
   }
 );
+
+//****** REGISTER **********/
+export const userRegister = createAsyncThunk("auth/register", async({}));
