@@ -21,3 +21,8 @@
   outline: -webkit-focus-ring-color auto 0px!important;
   cursor: pointer;
 } 
+
+/****** LOADER *******/
+.laoder-container{
+  display: flex;
+}
