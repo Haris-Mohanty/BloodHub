@@ -2,11 +2,13 @@ import React from "react";
 import Form from "../../components/shared/Form/Form";
 import { useSelector } from "react-redux";
 import Spinner from "../../components/shared/Spinner";
+import { toast } from "react-toastify";
 
 const Login = () => {
   const { loading, error } = useSelector((state) => state.auth);
   return (
     <>
+    {error && <span>{toast.error(error)}</span>}
       {loading ? (<Spinner />) : (
         <div className="container-fluid">
           <div className="row g-0">
