@@ -1,7 +1,9 @@
 import React from "react";
 import Form from "../../components/shared/Form/Form";
+import { useSelector } from "react-redux";
 
 const Register = () => {
+  const { loading, error } = useSelector((state) => state.auth);
   return (
     <>
       <div className="container-fuild">
