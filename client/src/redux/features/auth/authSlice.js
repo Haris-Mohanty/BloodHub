@@ -45,6 +45,8 @@ const authSlice = createSlice({
       state.loading = false;
       state.error = payload;
     });
+    //Get Current User
+    
   },
 });
 
