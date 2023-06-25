@@ -12,6 +12,7 @@ export const userLogin = createAsyncThunk(
       if (data.success) {
         localStorage.setItem("token", data.token);
         toast.success(data.message);
+        window.location.replace("/");
       }
       return data;
     } catch (error) {
@@ -28,31 +29,11 @@ export const userLogin = createAsyncThunk(
 export const userRegister = createAsyncThunk(
   "auth/register",
   async (
-    {
-      name,
-      role,
-      email,
-      password,
-      organisationName,
-      hospitalName,
-      website,
-      address,
-      phone,
-    },
+    { name, role, email, password, organisationName, hospitalName, website, address, phone },
     { rejectWithValue }
   ) => {
     try {
-      const { data } = await API.post("/auth/register", {
-        name,
-        role,
-        email,
-        password,
-        organisationName,
-        hospitalName,
-        website,
-        address,
-        phone,
-      });
+      const { data } = await API.post("/auth/register", { name, role, email, password, organisationName, hospitalName, website, address, phone });
       if (data.success) {
         toast.success(data.message);
         window.location.replace("/login");
