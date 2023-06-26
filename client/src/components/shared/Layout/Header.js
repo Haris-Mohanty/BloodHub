@@ -1,12 +1,20 @@
 import React from "react";
 import {} from "react-icons/bi";
+import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { toast } from "react-toastify";
 
 const Header = () => {
   const { user } = useSelector((state) => state.auth);
 
+  const navigate = useNavigate();
+
   //LOGOUT HANDLER
-  const handleLogout = () => {};
+  const handleLogout = () => {
+    localStorage.clear();
+    
+    navigate("/login");
+  };
 
   return (
     <div>
@@ -48,7 +56,7 @@ const Header = () => {
                 </li>
 
                 <div className="dropdown btn-group shadow-sm ml-auto">
-                  <button className="btn btn-danger">
+                  <button className="btn btn-danger" onClick={handleLogout}>
                     <i class="fa-solid fa-right-from-bracket"></i>
                     Logout
                   </button>
