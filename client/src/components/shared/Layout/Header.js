@@ -22,6 +22,11 @@ const Header = () => {
               <ul className="navbar-nav w-100 justify-content-end">
                 <li className="nav-item">
                   <a href="#" className="nav-link">
+                    Welcome
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a href="#" className="nav-link">
                     Home
                   </a>
                 </li>
@@ -32,16 +37,12 @@ const Header = () => {
                 </li>
                 <li className="nav-item">
                   <a href="#" className="nav-link">
-                    About
+                    Service
                   </a>
                 </li>
-                <li className="nav-item">
-                  <a href="#" className="nav-link">
-                    About
-                  </a>
-                </li>
+
                 <div className="dropdown btn-group shadow-sm ml-auto">
-                  <button className="btn">
+                  <button className="btn btn-danger">
                     <i class="fa-solid fa-right-from-bracket"></i>
                     Logout
                   </button>

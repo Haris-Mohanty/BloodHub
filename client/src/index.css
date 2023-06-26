@@ -48,3 +48,11 @@
     transform: rotate(360deg);
   }
 }
+
+/* NAV */
+.navbar-nav{
+  font-size: 18px;
+}
+.navbar-nav .nav-item{
+  padding-left: 13px;
+}
