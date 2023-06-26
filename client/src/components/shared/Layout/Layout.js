@@ -7,7 +7,10 @@ const Layout = ({ children }) => {
       <div className="header">
         <Header />
       </div>
-      <div className="content">{children}</div>
+      <div className="row g-0 home-con">
+        <div className="col-md-3">SIDEBAR</div>
+        <div className="col-md-9">{children}</div>
+      </div>
     </>
   );
 };

@@ -20,7 +20,7 @@ const Header = () => {
     <div>
       <div className="bg-light shadow-sm container-fluid">
         <nav className="navbar navbar-expand-sm fixed-top shadow-lg navbar-light bg-white">
-          <div className="container">
+          <div className="container w-100">
             <a href="#" className="navbar-brand">
               <img src="./assets/images/nav.png" className="w-50" />
             </a>
@@ -36,7 +36,9 @@ const Header = () => {
               <ul className="navbar-nav w-100 justify-content-end">
                 <li className="nav-item">
                   <a href="#" className="nav-link">
-                    Welcome &nbsp; {user?.name || user?.hospitalName || user?.organisationName} ! &nbsp;
+                    Welcome &nbsp;{" "}
+                    {user?.name || user?.hospitalName || user?.organisationName}{" "}
+                    ! &nbsp;
                     <span class="badge bg-secondary">{user?.role}</span>
                   </a>
                 </li>
