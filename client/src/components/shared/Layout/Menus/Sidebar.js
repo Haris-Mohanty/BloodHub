@@ -1,6 +1,6 @@
 import React from "react";
 import { UserMenu } from "./userMenus";
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 
 const Sidebar = () => {
   const location = useLocation();
@@ -13,7 +13,7 @@ const Sidebar = () => {
             return (
               <div className={`menu-item ${isActive && "active"}`}>
                 <i className={menu.icon}></i>
-                
+                <Link to={menu.path}>{menu.name}</Link>
               </div>
             );
           })}
