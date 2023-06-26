@@ -4,6 +4,10 @@ import { useSelector } from "react-redux";
 
 const Header = () => {
   const { user } = useSelector((state) => state.auth);
+
+  //LOGOUT HANDLER
+  const handleLogout = () => {};
+
   return (
     <div>
       <div className="bg-light shadow-sm container-fluid">
