@@ -1,7 +1,9 @@
 import React from "react";
 import {} from "react-icons/bi";
+import { useSelector } from "react-redux";
 
 const Header = () => {
+  const { user } = useSelector((state) => state.auth);
   return (
     <div>
       <div className="bg-light shadow-sm container-fluid">
@@ -22,7 +24,7 @@ const Header = () => {
               <ul className="navbar-nav w-100 justify-content-end">
                 <li className="nav-item">
                   <a href="#" className="nav-link">
-                    Welcome
+                    Welcome {user.name} !
                   </a>
                 </li>
                 <li className="nav-item">
