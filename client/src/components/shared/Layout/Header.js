@@ -1,4 +1,5 @@
 import React from "react";
+import {} from "react-icons/bi";
 
 const Header = () => {
   return (
@@ -7,9 +8,14 @@ const Header = () => {
         <nav className="navbar navbar-expand-sm fixed-top shadow-lg navbar-light bg-white">
           <div className="container">
             <a href="#" className="navbar-brand">
-              <img src="./assets/images/nav.png" className="w-50" /> 
+              <img src="./assets/images/nav.png" className="w-50" />
             </a>
-            <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#myNavbar">
+            <button
+              className="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#myNavbar"
+            >
               <span className="navbar-toggler-icon" />
             </button>
             <div className="navbar-collapse collapse" id="myNavbar">
@@ -36,17 +42,8 @@ const Header = () => {
                 </li>
                 <div className="dropdown btn-group shadow-sm ml-auto">
                   <button className="btn">
-                    <i className="fa fa-user" data-bs-toggle="dropdown" />
-                    <div className="dropdown-menu">
-                      <a href="#" className="dropdown-item">
-                        <i className="fa fa-user"></i>
-                        Register
-                      </a>
-                      <a href="#" className="dropdown-item">
-                        <i className="fa fa-sign-in"></i>
-                        Login
-                      </a>
-                    </div>
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    Logout
                   </button>
                 </div>
               </ul>
