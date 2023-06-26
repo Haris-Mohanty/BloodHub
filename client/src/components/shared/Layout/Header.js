@@ -12,7 +12,7 @@ const Header = () => {
   //LOGOUT HANDLER
   const handleLogout = () => {
     localStorage.clear();
-    
+    toast.success("Logout Successfully!");
     navigate("/login");
   };
 
@@ -36,7 +36,7 @@ const Header = () => {
               <ul className="navbar-nav w-100 justify-content-end">
                 <li className="nav-item">
                   <a href="#" className="nav-link">
-                    Welcome {user.name} !
+                    Welcome {user?.name} !
                   </a>
                 </li>
                 <li className="nav-item">
