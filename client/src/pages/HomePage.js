@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import Spinner from "../components/shared/Spinner";
 import { toast } from "react-toastify";
 import Layout from "../components/shared/Layout/Layout";
+import Modal from "../components/shared/modal/Modal";
 
 const HomePage = () => {
   const { loading, error } = useSelector((state) => state.auth);
@@ -21,6 +22,7 @@ const HomePage = () => {
             <i className="fa-solid fa-plus"></i>
             Add Inventory
           </h4>
+          <Modal />
         </>
       )}
     </Layout>

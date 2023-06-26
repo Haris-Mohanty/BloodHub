@@ -29,3 +29,6 @@
 .active i {
     color: #2e3200;
 }
+.main-page{
+  cursor: pointer;
+}
