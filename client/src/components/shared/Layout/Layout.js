@@ -12,7 +12,8 @@ const Layout = ({ children }) => {
         <div className="col-md-3">
           <Sidebar />
         </div>
-        <div className="col-md-9">{children}</div>
+        <div className="col-md-1"></div>
+        <div className="col-md-8">{children}</div>
       </div>
     </>
   );

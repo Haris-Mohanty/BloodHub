@@ -13,7 +13,8 @@ const HomePage = () => {
         <Spinner />
       ) : (
         <>
-          <h1>Home Page</h1>
+          <h4><i className="fa-solid fa-plus"></i>
+            Add Inventory</h4>
         </>
       )}
     </Layout>

@@ -1,6 +1,7 @@
 import React from "react";
 import { UserMenu } from "./userMenus";
 import { useLocation, Link } from "react-router-dom";
+import "../../../../styles/Layout.css"
 
 const Sidebar = () => {
   const location = useLocation();
