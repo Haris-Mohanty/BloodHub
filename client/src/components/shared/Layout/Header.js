@@ -36,7 +36,8 @@ const Header = () => {
               <ul className="navbar-nav w-100 justify-content-end">
                 <li className="nav-item">
                   <a href="#" className="nav-link">
-                    Welcome {user?.name} !
+                    Welcome {user?.name} ! $nbsp;
+                    <span class="badge bg-secondary">{user?.role}</span>
                   </a>
                 </li>
                 <li className="nav-item">
