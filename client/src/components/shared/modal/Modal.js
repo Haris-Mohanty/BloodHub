@@ -85,10 +85,10 @@ const Modal = () => {
               />
               <InputType
                 labelText={"Quantity"}
-                labelFor={"donorEmail"}
-                inputType={"email"}
-                value={donorEmail}
-                onChange={(e) => setDonorEmail(e.target.value)}
+                labelFor={"donorQuantity"}
+                inputType={"number"}
+                value={quantity}
+                onChange={(e) => setQuantity(e.target.value)}
               />
             </div>
             <div className="modal-footer">
