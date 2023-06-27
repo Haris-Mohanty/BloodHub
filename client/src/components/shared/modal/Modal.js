@@ -61,7 +61,7 @@ const Modal = () => {
                 </div>
               </div>
               <select
-                className="form-select"
+                className="form-select mb-3"
                 aria-label="Default-select-example"
                 onChange={(e) => setBloodGroup(e.target.value)}
               >
@@ -75,7 +75,13 @@ const Modal = () => {
                 <option value={"B+"}>B+</option>
                 <option value={"B-"}>B-</option>
               </select>
-              <InputType labelText={"Donor Email"} labelFp />
+              <InputType
+                labelText={"Donor Email"}
+                labelFor={"donorEmail"}
+                inputType={"email"}
+                value={donorEmail}
+                onChange={(e) => setDonorEmail(e.target.value)}
+              />
             </div>
             <div className="modal-footer">
               <button
