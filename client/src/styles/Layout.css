@@ -32,3 +32,7 @@
 .main-page{
   cursor: pointer;
 }
+
+.form-check, .form-check-label{
+  cursor: pointer;
+}

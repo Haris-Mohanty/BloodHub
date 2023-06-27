@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Modal = () => {
+  const [inventoryType, setInventoryType] = useState("in");
+  const [bloodGroup, setBloodGroup] = useState("");
+  const [quantity, setQuantity] = useState(0);
+  const [donorEmail, setDonorEmail] = useState("");
   return (
     <>
       <div
@@ -26,9 +30,35 @@ const Modal = () => {
               />
             </div>
             <div className="modal-body">
-              <div className="d-flex">
+              <div className="d-flex mb-3">
                 Blood Type: &nbsp;
-                <div className="form-check"></div>
+                <div className="form-check ms-3 px-3">
+                  <input
+                    type="radio"
+                    name="inRadio"
+                    defaultChecked
+                    id="in"
+                    value={"in"}
+                    onChange={(e) => setInventoryType(e.target.value)}
+                    className="form-check-input"
+                  />
+                  <label htmlFor="in" className="form-check-label">
+                    In
+                  </label>
+                </div>
+                <div className="form-check">
+                  <input
+                    type="radio"
+                    name="outRadio"
+                    value={"out"}
+                    id="out"
+                    onChange={(e) => setInventoryType(e.target.value)}
+                    className="form-check-input"
+                  />
+                  <label htmlFor="out" className="form-check-label">
+                    Out
+                  </label>
+                </div>
               </div>
             </div>
             <div className="modal-footer">
