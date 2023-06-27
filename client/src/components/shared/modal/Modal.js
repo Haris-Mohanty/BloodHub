@@ -73,6 +73,9 @@ const Modal = () => {
                 Submit
               </button>
             </div>
+            <select className="form-select" aria-label="Default-select-example">
+
+            </select>
           </div>
         </div>
       </div>
