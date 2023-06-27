@@ -49,7 +49,7 @@ const Modal = () => {
                 <div className="form-check">
                   <input
                     type="radio"
-                    name="outRadio"
+                    name="inRadio"
                     value={"out"}
                     id="out"
                     onChange={(e) => setInventoryType(e.target.value)}
