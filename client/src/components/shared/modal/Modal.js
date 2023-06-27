@@ -60,6 +60,22 @@ const Modal = () => {
                   </label>
                 </div>
               </div>
+              <select
+                className="form-select"
+                aria-label="Default-select-example"
+                onChange={(e) => setBloodGroup(e.target.value)}
+              >
+                <option selected>Choose Blood Group</option>
+                <option value={"O+"}>O+</option>
+                <option value={"O-"}>O-</option>
+                <option value={"AB+"}>AB+</option>
+                <option value={"AB-"}>AB-</option>
+                <option value={"A+"}>A+</option>
+                <option value={"A-"}>A-</option>
+                <option value={"B+"}>B+</option>
+                <option value={"B-"}>B-</option>
+              </select>
+              <InputType labelText={"Donor Email"} labelFp />
             </div>
             <div className="modal-footer">
               <button
@@ -73,18 +89,6 @@ const Modal = () => {
                 Submit
               </button>
             </div>
-            <select className="form-select" aria-label="Default-select-example">
-              <option selected></option>
-              <option value={"O+"}>O+</option>
-              <option value={"O-"}>O-</option>
-              <option value={"AB+"}>AB+</option>
-              <option value={"AB-"}>AB-</option>
-              <option value={"A+"}>A+</option>
-              <option value={"A-"}>A-</option>
-              <option value={"B+"}>B+</option>
-              <option value={"B-"}>B-</option>
-              
-            </select>
           </div>
         </div>
       </div>
