@@ -2,7 +2,7 @@
   height: 100vh !important;
   border: 5px;
   background-color: #2e3200;
-  box-shadow: 0 0 2px gray;
+  box-shadow: 0 0 3px 2px gray;
   color: white;
 }
 .menu {

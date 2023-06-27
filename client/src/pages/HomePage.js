@@ -15,7 +15,7 @@ const HomePage = () => {
       ) : (
         <>
           <h4
-            className="main-page"
+            className="main-page mt-5"
             data-bs-toggle="modal"
             data-bs-target="#staticBackdrop"
           >
