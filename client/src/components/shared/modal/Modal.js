@@ -74,7 +74,16 @@ const Modal = () => {
               </button>
             </div>
             <select className="form-select" aria-label="Default-select-example">
-
+              <option selected></option>
+              <option value={"O+"}>O+</option>
+              <option value={"O-"}>O-</option>
+              <option value={"AB+"}>AB+</option>
+              <option value={"AB-"}>AB-</option>
+              <option value={"A+"}>A+</option>
+              <option value={"A-"}>A-</option>
+              <option value={"B+"}>B+</option>
+              <option value={"B-"}>B-</option>
+              
             </select>
           </div>
         </div>
