@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import InputType from "../Form/InputType"
 
 const Modal = () => {
   const [inventoryType, setInventoryType] = useState("in");
@@ -77,6 +78,13 @@ const Modal = () => {
               </select>
               <InputType
                 labelText={"Donor Email"}
+                labelFor={"donorEmail"}
+                inputType={"email"}
+                value={donorEmail}
+                onChange={(e) => setDonorEmail(e.target.value)}
+              />
+              <InputType
+                labelText={"Quantity"}
                 labelFor={"donorEmail"}
                 inputType={"email"}
                 value={donorEmail}
