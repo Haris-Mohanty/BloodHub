@@ -16,7 +16,7 @@ const Modal = () => {
           <div className="modal-content">
             <div className="modal-header">
               <h1 className="modal-title fs-5" id="staticBackdropLabel">
-                Modal title
+                Manage Blood Records
               </h1>
               <button
                 type="button"
@@ -25,7 +25,12 @@ const Modal = () => {
                 aria-label="Close"
               />
             </div>
-            <div className="modal-body">...</div>
+            <div className="modal-body">
+              <div className="d-flex">
+                Blood Type: &nbsp;
+                <div className="form-check"></div>
+              </div>
+            </div>
             <div className="modal-footer">
               <button
                 type="button"
@@ -35,7 +40,7 @@ const Modal = () => {
                 Close
               </button>
               <button type="button" className="btn btn-primary">
-                Understood
+                Submit
               </button>
             </div>
           </div>
