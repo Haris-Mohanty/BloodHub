@@ -6,6 +6,9 @@ const Modal = () => {
   const [bloodGroup, setBloodGroup] = useState("");
   const [quantity, setQuantity] = useState(0);
   const [donorEmail, setDonorEmail] = useState("");
+
+  //
+
   return (
     <>
       <div
@@ -99,7 +102,7 @@ const Modal = () => {
               >
                 Close
               </button>
-              <button type="button" className="btn btn-primary">
+              <button type="button" className="btn btn-primary" onClick={handleModalSubmit}>
                 Submit
               </button>
             </div>
