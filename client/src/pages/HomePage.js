@@ -17,7 +17,6 @@ const HomePage = () => {
       const { data } = await API.get("/inventory/get-inventory");
       if (data?.success) {
         setData(data?.inventory);
-        console.log(data);
       }
     } catch (error) {
       console.log(error);
@@ -45,24 +44,30 @@ const HomePage = () => {
             Add Inventory
           </h4>
 
-          <table className="table table-striped">
-            <thead>
-              <tr>
-                <th scope="col">Blood Group</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
-            </tbody>
-          </table>
+          <div className="container mb-5">
+            <table className="table table-striped">
+              <thead>
+                <tr>
+                  <th scope="col">Blood Group</th>
+                  <th scope="col">Inventory Type</th>
+                  <th scope="col">Quantity</th>
+                  <th scope="col">Donor Email</th>
+                  <th scope="col">Date & Time</th>
+                </tr>
+              </thead>
+              <tbody>
+                {data?.map((record) => (
+                  <tr key={record._id}>
+                    <td>{record.bloodGroup}</td>
+                    <td>{record.inventoryType}</td>
+                    <td>{record.quantity}</td>
+                    <td>{record.donorEmail}</td>
+                    <td>{record.createdAt}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
 
           <Modal />
         </>
