@@ -113,7 +113,7 @@ const Modal = () => {
                 onChange={(e) => setDonorEmail(e.target.value)}
               />
               <InputType
-                labelText={"Quantity (ml)"}
+                labelText={"Quantity (mlixe)"}
                 labelFor={"donorQuantity"}
                 inputType={"number"}
                 value={quantity}
