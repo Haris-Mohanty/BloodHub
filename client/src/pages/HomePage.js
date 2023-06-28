@@ -45,18 +45,18 @@ const HomePage = () => {
             Add Inventory
           </h4>
 
-          <div className="container mb-5">
+          
             <table className="table table-striped">
               <thead>
-                <tr>
+                <tr className="red">
                   <th scope="col">Blood Group</th>
                   <th scope="col">Inventory Type</th>
-                  <th scope="col">Quantity</th>
+                  <th scope="col">Quantity (ml)</th>
                   <th scope="col">Donor Email</th>
                   <th scope="col">Date & Time</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody className="category-list">
                 {data?.map((record) => (
                   <tr key={record._id}>
                     <td>{record.bloodGroup}</td>
@@ -70,7 +70,7 @@ const HomePage = () => {
                 ))}
               </tbody>
             </table>
-          </div>
+          
 
           <Modal />
         </>
