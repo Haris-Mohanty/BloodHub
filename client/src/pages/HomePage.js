@@ -36,29 +36,33 @@ const HomePage = () => {
         <Spinner />
       ) : (
         <>
-          <h4
-            className="main-page mt-5 mb-5"
+        
+          <h2
+            className="main-page mt-5 mb-5 text-info fw-bold"
             data-bs-toggle="modal"
             data-bs-target="#staticBackdrop"
           >
             <i className="fa-solid fa-plus"></i>
             Add Inventory
-          </h4>
+          </h2>
+          <hr/>
 
           
             <table className="table table-striped">
               <thead>
                 <tr className="red">
-                  <th scope="col">Blood Group</th>
-                  <th scope="col">Inventory Type</th>
-                  <th scope="col">Quantity (ml)</th>
-                  <th scope="col">Donor Email</th>
+                  <th scope="col">S/N</th>
+                  <th scope="col">BloodGroup</th>
+                  <th scope="col">InventoryType</th>
+                  <th scope="col">Quantity(ml)</th>
+                  <th scope="col">DonorEmail</th>
                   <th scope="col">Date & Time</th>
                 </tr>
               </thead>
               <tbody className="category-list">
-                {data?.map((record) => (
+                {data?.map((record, index) => (
                   <tr key={record._id}>
+                    <td>{index+1}</td>
                     <td>{record.bloodGroup}</td>
                     <td>{record.inventoryType}</td>
                     <td>{record.quantity}</td>

@@ -1,3 +1,4 @@
+const mongoose = require("mongoose");
 const inventoryModel = require("../models/inventoryModel");
 const userModel = require("../models/userModel");
 
@@ -14,9 +15,19 @@ const createInventoryController = async (req, res) => {
     // if (inventoryType === "in" && user.role !== "donor") {
     //   throw new Error("Not a Donor Account!");
     // }
-    if (inventoryType === "out" && user.role !== "hospital") {
-      throw new Error("Not a Hospital!");
+    // if (inventoryType === "out" && user.role !== "hospital") {
+    //   throw new Error("Not a Hospital!");
+    // }
+
+    //
+    if (req.body.inventoryType === "out") {
+      const requestedBloodGroup = req.body.bloodGroup;
+      const requestedQuantityOfBlood = req.body.quantity;
+      const organisation = new mongoose.Types.ObjectId(req.body.userId);
+      //Calculate Blood Quantity
+      const tota
     }
+
     //Save inventory
     const inventory = new inventoryModel(req.body);
     await inventory.save();
