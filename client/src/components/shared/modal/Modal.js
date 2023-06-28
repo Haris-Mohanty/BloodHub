@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import InputType from "../Form/InputType"
+import InputType from "../Form/InputType";
+import { toast } from "react-toastify";
 
 const Modal = () => {
   const [inventoryType, setInventoryType] = useState("in");
@@ -7,7 +8,17 @@ const Modal = () => {
   const [quantity, setQuantity] = useState(0);
   const [donorEmail, setDonorEmail] = useState("");
 
-  //
+  //HANDLE MODAL DATA
+  const handleModalSubmit = async () => {
+    try {
+      if (!bloodGroup || !quantity || !donorEmail) {
+        return toast.warning("Please Provide All Fields!");
+      }
+      const {data}
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <>
@@ -102,7 +113,11 @@ const Modal = () => {
               >
                 Close
               </button>
-              <button type="button" className="btn btn-primary" onClick={handleModalSubmit}>
+              <button
+                type="button"
+                className="btn btn-primary"
+                onClick={handleModalSubmit}
+              >
                 Submit
               </button>
             </div>
