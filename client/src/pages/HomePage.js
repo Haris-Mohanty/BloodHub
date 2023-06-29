@@ -65,8 +65,8 @@ const HomePage = () => {
                     <td>{index+1}</td>
                     <td>{record.bloodGroup}</td>
                     <td>{record.inventoryType}</td>
-                    <td>{record.quantity}</td>
-                    <td>{record.donorEmail}</td>
+                    <td>{record.quantity} (ml)</td>
+                    <td>{record.email}</td>
                     <td>
                       {moment(record.createdAt).format("DD/MM/YYYY hh:mm A")}
                     </td>

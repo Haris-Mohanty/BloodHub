@@ -41,7 +41,7 @@
 /***** Table *****/
 
 .category-list-show-h {
-  height: 55vh;
+  height: 85vh;
   overflow-y: scroll;
 }
 ::-webkit-scrollbar {

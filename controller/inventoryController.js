@@ -5,7 +5,7 @@ const userModel = require("../models/userModel");
 //********* CREATE INVENTORY *******/
 const createInventoryController = async (req, res) => {
   try {
-    const { email, inventoryType } = req.body;
+    const { email } = req.body;
     //Validation
     const user = await userModel.findOne({ email });
     if (!user) {
@@ -70,9 +70,11 @@ const createInventoryController = async (req, res) => {
         });
       }
       req.body.hospital = user?._id;
+    } else {
+      req.body.donor = user?._id;
     }
 
-    //Save inventory
+    //Save inventory(blood record)
     const inventory = new inventoryModel(req.body);
     await inventory.save();
     //Response
