@@ -1,12 +1,53 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Layout from "../../components/shared/Layout/Layout";
+import API from "../../services/API";
 
 const Hospitals = () => {
   const [data, setData] = useState([]);
-  
+
+  //find hospital data
+  const getHospitals = async () => {
+    try {
+      const { data } = await API("/inventory/get-hospitals");
+      if (data?.success) {
+        setData(data?.hospitals);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    getHospitals();
+  }, []);
+
   return (
     <Layout>
       <h1>Hospital Details</h1>
+      <hr />
+
+      <table className="table table-striped">
+        <thead>
+          <tr className="green">
+            <th scope="col">S/N</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">MobileNo. </th>
+            <th scope="col">Date & Time</th>
+          </tr>
+        </thead>
+        <tbody className="category-list">
+          {data?.map((record, index) => (
+            <tr key={record._id}>
+              <td>{index + 1}</td>
+              <td>{record.name || record.organisationName + "(ORG)"}</td>
+              <td>{record.email}</td>
+              <td>{record.phone}</td>
+              <td>{moment(record.createdAt).format("DD/MM/YYYY hh:mm A")}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </Layout>
   );
 };

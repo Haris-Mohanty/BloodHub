@@ -154,12 +154,12 @@ const getHospitalsController = async (req, res) => {
     });
 
     //find hospital
-    const hospital = await userModel.find({ _id: { $in: hospitalId } });
+    const hospitals = await userModel.find({ _id: { $in: hospitalId } });
 
     return res.status(200).send({
       success: true,
       message: "Hospital Data Fetched Successfully!",
-      hospital,
+      hospitals,
     });
   } catch (error) {
     console.log(error);
