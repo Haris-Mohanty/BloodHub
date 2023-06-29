@@ -12,7 +12,7 @@ const HomePage = () => {
 
   // **Show records in page ***/
   const [data, setData] = useState([]);
-  //get
+  //get 
   const getBloodrecords = async () => {
     try {
       const { data } = await API.get("/inventory/get-inventory");
