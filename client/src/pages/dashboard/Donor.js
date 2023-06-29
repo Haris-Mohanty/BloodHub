@@ -3,13 +3,15 @@ import Layout from "../../components/shared/Layout/Layout";
 import API from "../../services/API";
 
 const Donor = () => {
-  const { data, setData } = useState("");
+  const { data, setData } = useState([]);
   //find donor records
   const getDonors = async () => {
     try {
       const { data } = await API.get("/inventory/get-donors");
       //   console.log(data);
-      setData(data);
+      if (data?.success) {
+        setData(data?.donors);
+      }
     } catch (error) {
       console.log(error);
     }
@@ -25,12 +27,11 @@ const Donor = () => {
 
       <table className="table table-striped">
         <thead>
-          <tr className="red">
+          <tr className="green">
             <th scope="col">S/N</th>
-            <th scope="col">BloodGroup</th>
-            <th scope="col">InventoryType</th>
-            <th scope="col">Quantity(ml)</th>
-            <th scope="col">DonorEmail</th>
+            <th scope="col">Name</th>
+            <th scope="col">EmailID</th>
+            <th scope="col">MobileNo. </th>
             <th scope="col">Date & Time</th>
           </tr>
         </thead>

@@ -70,6 +70,10 @@ tr.red th {
   background: rgb(250, 12, 119);
   color: white;
 }
+tr.green th {
+  background: rgb(0, 147, 105);
+  color: white;
+}
 th {
   background: white;
   position: sticky;
