@@ -1,11 +1,12 @@
-import React from 'react'
+import React from "react";
+import Layout from "../../components/shared/Layout/Layout";
 
 const Hospitals = () => {
   return (
-    <div>
-      
-    </div>
-  )
-}
+    <Layout>
+      <h1>Hospital Details</h1>
+    </Layout>
+  );
+};
 
-export default Hospitals
+export default Hospitals;
