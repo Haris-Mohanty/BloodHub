@@ -118,7 +118,31 @@ const getInventoryController = async (req, res) => {
 };
 
 //******** GET DONOR RECORD *******/
-const getDonorsController = async (req, res) => {};
+const getDonorsController = async (req, res) => {
+  try {
+    const organisation = req.body.userId;
+
+    //find donor
+    const donorId = await inventoryModel.distinct("donor", {
+      organisation,
+    });
+    // console.log(donorId);
+    const donors = await userModel.find({ _id: { $in: donorId } });
+
+    res.status(200).send({
+      success: true,
+      message: "Donor Record Fetched Successfully!",
+      donors,
+    });
+  } catch (error) {
+    console.log(error);
+    return res.status(500).send({
+      success: false,
+      message: "Error in Donor Records",
+      error,
+    });
+  }
+};
 
 //****** EXPORT *****/
 module.exports = {

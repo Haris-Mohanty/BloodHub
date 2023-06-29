@@ -17,6 +17,6 @@ router.post("/create-inventory", authMiddleware, createInventoryController);
 router.get("/get-inventory", authMiddleware, getInventoryController);
 
 //Get Donor Records
-router.get("/get-donor", authMiddleware, getDonorsController);
+router.get("/get-donors", authMiddleware, getDonorsController);
 
 module.exports = router;
