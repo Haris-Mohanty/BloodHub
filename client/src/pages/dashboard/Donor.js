@@ -1,11 +1,12 @@
-import React from 'react'
+import React from "react";
+import Layout from "../../components/shared/Layout/Layout";
 
 const Donor = () => {
   return (
-    <div>
+    <Layout>
       <h1>Donor Page</h1>
-    </div>
-  )
-}
+    </Layout>
+  );
+};
 
-export default Donor
+export default Donor;

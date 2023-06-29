@@ -3,6 +3,7 @@ const authMiddleware = require("../middleware/authMiddleware");
 const {
   createInventoryController,
   getInventoryController,
+  getDonorsController,
 } = require("../controller/inventoryController");
 
 //ROUTER OBJECT
@@ -14,5 +15,8 @@ router.post("/create-inventory", authMiddleware, createInventoryController);
 
 //Get All Blood Records(Inventory Find)
 router.get("/get-inventory", authMiddleware, getInventoryController);
+
+//Get Donor Records
+router.get("/get-donor", authMiddleware, getDonorsController);
 
 module.exports = router;

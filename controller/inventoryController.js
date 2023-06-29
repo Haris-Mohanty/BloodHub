@@ -117,5 +117,12 @@ const getInventoryController = async (req, res) => {
   }
 };
 
+//******** GET DONOR RECORD *******/
+const getDonorsController = async (req, res) => {};
+
 //****** EXPORT *****/
-module.exports = { createInventoryController, getInventoryController };
+module.exports = {
+  createInventoryController,
+  getInventoryController,
+  getDonorsController,
+};
