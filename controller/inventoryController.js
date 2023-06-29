@@ -144,9 +144,37 @@ const getDonorsController = async (req, res) => {
   }
 };
 
+//****** GET HOSPITALS DATA **********/
+const getHospitalsController = async (req, res) => {
+  try {
+    const organisation = req.body.userId;
+    //get hospital id
+    const hospitalId = await inventoryModel.distinct("hospital", {
+      organisation,
+    });
+
+    //find hospital
+    const hospital = await userModel.find({ _id: { $in: hospitalId } });
+
+    return res.status(200).send({
+      success: true,
+      message: "Hospital Data Fetched Successfully!",
+      hospital,
+    });
+  } catch (error) {
+    console.log(error);
+    return res.status(500).send({
+      success: false,
+      message: "Error in Hospital Records",
+      error,
+    });
+  }
+};
+
 //****** EXPORT *****/
 module.exports = {
   createInventoryController,
   getInventoryController,
   getDonorsController,
+  getHospitalsController,
 };

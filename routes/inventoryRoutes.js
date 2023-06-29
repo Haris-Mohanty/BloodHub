@@ -4,6 +4,7 @@ const {
   createInventoryController,
   getInventoryController,
   getDonorsController,
+  getHospitalsController,
 } = require("../controller/inventoryController");
 
 //ROUTER OBJECT
@@ -18,5 +19,8 @@ router.get("/get-inventory", authMiddleware, getInventoryController);
 
 //Get Donor Records
 router.get("/get-donors", authMiddleware, getDonorsController);
+
+//Get Hospital Data
+router.get("/get-hospitals", authMiddleware, getHospitalsController);
 
 module.exports = router;
