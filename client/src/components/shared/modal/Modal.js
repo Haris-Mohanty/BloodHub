@@ -15,7 +15,7 @@ const Modal = () => {
   //HANDLE MODAL DATA
   const handleModalSubmit = async () => {
     try {
-      if (!bloodGroup || !quantity || !donorEmail) {
+      if (!bloodGroup || !quantity) {
         return toast.warning("Please Provide All Fields!");
       }
       const { data } = await API.post("/inventory/create-inventory", {
@@ -28,10 +28,12 @@ const Modal = () => {
       });
       if (data?.success) {
         toast.success("New Record Created!");
+        // window.location.reload();
       }
     } catch (error) {
+      alert(error.response.data.message);
+      // window.location.reload();
       console.log(error);
-      window.location.reload();
     }
   };
 
@@ -95,7 +97,9 @@ const Modal = () => {
                 aria-label="Default-select-example"
                 onChange={(e) => setBloodGroup(e.target.value)}
               >
-                <option selected>Choose Blood Group</option>
+                <option defaultValue={"Choose Blood Group"}>
+                  Choose Blood Group
+                </option>
                 <option value={"O+"}>O+</option>
                 <option value={"O-"}>O-</option>
                 <option value={"AB+"}>AB+</option>

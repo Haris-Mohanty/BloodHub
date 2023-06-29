@@ -39,7 +39,7 @@ const Header = () => {
                     Welcome &nbsp;{" "}
                     {user?.name || user?.hospitalName || user?.organisationName}{" "}
                     ! &nbsp;
-                    <span class="badge bg-secondary">{user?.role}</span>
+                    <span className="badge bg-secondary">{user?.role}</span>
                   </a>
                 </li>
                 <li className="nav-item">
@@ -60,7 +60,7 @@ const Header = () => {
 
                 <div className="dropdown btn-group shadow-sm ml-auto">
                   <button className="btn btn-danger" onClick={handleLogout}>
-                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <i className="fa-solid fa-right-from-bracket"></i>
                     Logout
                   </button>
                 </div>

@@ -20,12 +20,56 @@ const createInventoryController = async (req, res) => {
     // }
 
     //
-    if (req.body.inventoryType === "out") {
+    if (req.body.inventoryType == "out") {
       const requestedBloodGroup = req.body.bloodGroup;
       const requestedQuantityOfBlood = req.body.quantity;
       const organisation = new mongoose.Types.ObjectId(req.body.userId);
       //Calculate Blood Quantity
-      const tota
+      const totalInOfRequestedBlood = await inventoryModel.aggregate([
+        {
+          $match: {
+            organisation,
+            inventoryType: "in",
+            bloodGroup: requestedBloodGroup,
+          },
+        },
+        {
+          $group: {
+            _id: "$bloodGroup",
+            total: { $sum: "$quantity" },
+          },
+        },
+      ]);
+      // console.log("Total in: ", totalInOfRequestedBlood);
+      const totalIn = totalInOfRequestedBlood[0]?.total || 0;
+
+      //Calculate OUT Blood Quantity
+      const totalOutOfRequestedBlood = await inventoryModel.aggregate([
+        {
+          $match: {
+            organisation,
+            inventoryType: "out",
+            bloodGroup: requestedBloodGroup,
+          },
+        },
+        {
+          $group: { _id: "$bloodGroup", total: { $sum: "$quantity" } },
+        },
+      ]);
+      // console.log("Total out: ", totalOutOfRequestedBlood);
+      const totalOut = totalOutOfRequestedBlood[0]?.total || 0;
+
+      //Calculate of in & out
+      const availableQuantityOfBolldGroup = totalIn - totalOut;
+
+      //Quantity Validation
+      if (availableQuantityOfBolldGroup < requestedQuantityOfBlood) {
+        return res.status(500).send({
+          success: false,
+          message: `Only ${availableQuantityOfBolldGroup}ml of ${requestedBloodGroup.toUpperCase()} is available!`,
+        });
+      }
+      req.body.hospital = user?._id;
     }
 
     //Save inventory
