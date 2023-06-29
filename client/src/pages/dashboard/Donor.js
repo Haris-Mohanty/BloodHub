@@ -9,10 +9,10 @@ const Donor = () => {
   const getDonors = async () => {
     try {
       const { data } = await API.get("/inventory/get-donors");
-    //   console.log(data);
-        if (data?.success) {
-          setData(data?.donors);
-        }
+      //   console.log(data);
+      if (data?.success) {
+        setData(data?.donors);
+      }
     } catch (error) {
       console.log(error);
     }
@@ -24,14 +24,15 @@ const Donor = () => {
 
   return (
     <Layout>
-      <h1 className="mt-5 mb-4">Donor Page</h1>
+      <h1 className="mt-5 mb-4 fw-bold text-success">Donor Details</h1>
+      <hr/>
 
       <table className="table table-striped">
         <thead>
           <tr className="green">
             <th scope="col">S/N</th>
             <th scope="col">Name</th>
-            <th scope="col">EmailID</th>
+            <th scope="col">Email</th>
             <th scope="col">MobileNo. </th>
             <th scope="col">Date & Time</th>
           </tr>
@@ -39,8 +40,8 @@ const Donor = () => {
         <tbody className="category-list">
           {data?.map((record, index) => (
             <tr key={record._id}>
-              <td>{record._id}</td>
-              <td>{record.name || record.organisationName + " (Org) "}</td>
+              <td>{index + 1}</td>
+              <td>{record.name || record.organisationName + "(ORG)"}</td>
               <td>{record.email}</td>
               <td>{record.phone}</td>
               <td>{moment(record.createdAt).format("DD/MM/YYYY hh:mm A")}</td>
