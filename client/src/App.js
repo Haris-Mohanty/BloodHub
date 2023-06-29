@@ -7,6 +7,7 @@ import "react-toastify/dist/ReactToastify.css";
 import ProtectedRoutes from "./components/Routes/ProtectedRoutes";
 import PublicRoutes from "./components/Routes/PublicRoutes";
 import Donor from "./pages/dashboard/Donor";
+import Hospitals from "./pages/dashboard/Hospitals";
 function App() {
   return (
     <>
@@ -25,6 +26,14 @@ function App() {
           element={
             <ProtectedRoutes>
               <Donor />
+            </ProtectedRoutes>
+          }
+        />
+        <Route
+          path="/hospital"
+          element={
+            <ProtectedRoutes>
+              <Hospitals />
             </ProtectedRoutes>
           }
         />
