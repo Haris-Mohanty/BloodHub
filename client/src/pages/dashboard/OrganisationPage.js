@@ -29,7 +29,7 @@ const OrganisationPage = () => {
 
       <table className="table table-striped">
         <thead>
-          <tr className="yellow">
+          <tr className="blue">
             <th scope="col">S/N</th>
             <th scope="col">OrgName</th>
             <th scope="col">OrgEmail</th>

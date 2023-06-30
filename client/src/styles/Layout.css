@@ -78,6 +78,10 @@ tr.yellow th {
   background: rgb(238, 195, 24);
   color: white;
 }
+tr.blue th {
+  background: rgb(2, 35, 197);
+  color: white;
+}
 th {
   background: white;
   position: sticky;
