@@ -41,7 +41,7 @@ const Sidebar = () => {
               </div>
             </>
           )}
-          {user?.role === "donor" && (
+          {(user?.role === "donor" || user?.role === "hospital") && (
             <div
               className={`menu-item ${
                 location.pathname === "/organisation" && "active"
