@@ -23,4 +23,7 @@ router.get("/get-donors", authMiddleware, getDonorsController);
 //Get Hospital Data
 router.get("/get-hospitals", authMiddleware, getHospitalsController);
 
+//Get Hospital Data
+router.get("/get-organisation", authMiddleware);
+
 module.exports = router;
