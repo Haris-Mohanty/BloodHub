@@ -24,12 +24,12 @@ const Hospitals = () => {
 
   return (
     <Layout>
-      <h1>Hospital Details</h1>
+      <h1 className="mt-5 mb-4 fw-bold text-warning">Hospital Details</h1>
       <hr />
 
       <table className="table table-striped">
         <thead>
-          <tr className="green">
+          <tr className="yellow">
             <th scope="col">S/N</th>
             <th scope="col">Name</th>
             <th scope="col">Email</th>

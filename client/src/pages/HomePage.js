@@ -55,7 +55,7 @@ const HomePage = () => {
                   <th scope="col">BloodGroup</th>
                   <th scope="col">InventoryType</th>
                   <th scope="col">Quantity(ml)</th>
-                  <th scope="col">DonorEmail</th>
+                  <th scope="col">Email</th>
                   <th scope="col">Date & Time</th>
                 </tr>
               </thead>
