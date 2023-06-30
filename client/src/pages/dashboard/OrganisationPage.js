@@ -1,11 +1,12 @@
-import React from 'react'
+import React from "react";
+import Layout from "./../../components/shared/Layout";
 
 const OrganisationPage = () => {
   return (
-    <div>
-      
-    </div>
-  )
-}
+    <Layout>
+      <h1>Organisation Details</h1>
+    </Layout>
+  );
+};
 
-export default OrganisationPage
+export default OrganisationPage;
