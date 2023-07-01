@@ -225,9 +225,7 @@ const getOrganisationForHospitalController = async (req, res) => {
 const getInventoryHospitalController = async (req, res) => {
   try {
     const inventory = await inventoryModel
-      .find({
-        organization: req.body._id,
-      })
+      .find()
       .populate("donor")
       .populate("hospital")
       .sort({ createdAt: -1 });
