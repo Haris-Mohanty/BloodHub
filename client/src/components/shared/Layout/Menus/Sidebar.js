@@ -61,6 +61,16 @@ const Sidebar = () => {
               <Link to="/consumer">Consumer</Link>
             </div>
           )}
+          {user?.role === "donor" && (
+            <div
+              className={`menu-item ${
+                location.pathname === "/donation" && "active"
+              }`}
+            >
+              <i className="fa-solid fa-user"></i>
+              <Link to="/donation">Donation</Link>
+            </div>
+          )}
           {/* Used for dynamic */}
           {/* {UserMenu.map((menu) => {
             const isActive = location.pathname === menu.path;

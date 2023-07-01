@@ -41,7 +41,7 @@ const Consumer = () => {
             <th scope="col">S/N</th>
             <th scope="col">BloodGroup</th>
             <th scope="col">InventoryType</th>
-            <th scope="col">Quantity(ml) </th>
+            <th scope="col">Quantity </th>
             <th scope="col">Email</th>
             <th scope="col">Date & Time</th>
           </tr>
@@ -49,10 +49,10 @@ const Consumer = () => {
         <tbody className="category-list">
           {data?.map((record, index) => (
             <tr key={record._id}>
-              <td>{index+1}</td>
+              <td>{index + 1}</td>
               <td>{record.bloodGroup}</td>
               <td>{record.inventoryType}</td>
-              <td>{record.quantity}</td>
+              <td>{record.quantity}(ML)</td>
               <td>{record.email}</td>
               <td>{moment(record.createdAt).format("DD/MM/YYYY hh:mm A")}</td>
             </tr>
