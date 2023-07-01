@@ -197,7 +197,12 @@ const getOrganisationController = async (req, res) => {
 };
 
 //******** GET ORGANISATION DATA IN HOSPITAL PAGE **********/
-const getOrganisationForHospitalController = () => {};
+const getOrganisationForHospitalController = (req, res) => {
+  try {
+  } catch (error) {
+    console.log(error);
+  }
+};
 
 //****** EXPORT *****/
 module.exports = {
