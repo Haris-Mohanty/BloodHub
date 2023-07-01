@@ -6,6 +6,7 @@ const {
   getDonorsController,
   getHospitalsController,
   getOrganisationController,
+  getOrganisationForHospitalController,
 } = require("../controller/inventoryController");
 
 //ROUTER OBJECT
@@ -28,6 +29,6 @@ router.get("/get-hospitals", authMiddleware, getHospitalsController);
 router.get("/get-organisation", authMiddleware, getOrganisationController);
 
 //Get Organisation Data in Hospital Page
-router.get("/get-organisation-for-hospital", authMiddleware);
+router.get("/get-organisation-for-hospital", authMiddleware, getOrganisationForHospitalController);
 
 module.exports = router;

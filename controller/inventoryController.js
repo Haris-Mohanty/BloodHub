@@ -196,6 +196,9 @@ const getOrganisationController = async (req, res) => {
   }
 };
 
+//******** GET ORGANISATION DATA IN HOSPITAL PAGE **********/
+const getOrganisationForHospitalController = () => {};
+
 //****** EXPORT *****/
 module.exports = {
   createInventoryController,
@@ -203,4 +206,5 @@ module.exports = {
   getDonorsController,
   getHospitalsController,
   getOrganisationController,
+  getOrganisationForHospitalController,
 };
