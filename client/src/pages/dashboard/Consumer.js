@@ -20,7 +20,7 @@ const Consumer = () => {
       });
       //   console.log(data);
       if (data?.success) {
-        setData(data?.donors);
+        setData(data?.inventory);
       }
     } catch (error) {
       console.log(error);
@@ -39,20 +39,24 @@ const Consumer = () => {
         <thead>
           <tr className="green">
             <th scope="col">S/N</th>
-            <th scope="col">Name</th>
+            <th scope="col">BloodGroup</th>
+            <th scope="col">InventoryType</th>
+            <th scope="col">Quantity(ml) </th>
             <th scope="col">Email</th>
-            <th scope="col">MobileNo. </th>
             <th scope="col">Date & Time</th>
           </tr>
         </thead>
         <tbody className="category-list">
-          <tr>
-            <td></td>
-
-            <td></td>
-
-            <td>{moment(record.createdAt).format("DD/MM/YYYY hh:mm A")}</td>
-          </tr>
+          {data?.map((record, index) => (
+            <tr key={record._id}>
+              <td>{index+1}</td>
+              <td>{record.bloodGroup}</td>
+              <td>{record.inventoryType}</td>
+              <td>{record.quantity}</td>
+              <td>{record.email}</td>
+              <td>{moment(record.createdAt).format("DD/MM/YYYY hh:mm A")}</td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </Layout>
