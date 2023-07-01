@@ -31,4 +31,7 @@ router.get("/get-organisation", authMiddleware, getOrganisationController);
 //Get Organisation Data in Hospital Page
 router.get("/get-organisation-for-hospital", authMiddleware, getOrganisationForHospitalController);
 
+//Get All Blood Records(Inventory Find)
+router.get("/get-inventory", authMiddleware, getInventoryController);
+
 module.exports = router;
