@@ -225,20 +225,21 @@ const getOrganisationForHospitalController = async (req, res) => {
 const getInventoryHospitalController = async (req, res) => {
   try {
     const inventory = await inventoryModel
-      .find()
+      .find(req.body.filters)
       .populate("donor")
       .populate("hospital")
+      .populate("organisation")
       .sort({ createdAt: -1 });
     return res.status(200).send({
       success: true,
-      message: "Get all Records Successfully",
+      message: "Get Hospital Consumer Records Successfully",
       inventory,
     });
   } catch (err) {
     console.log(err);
     return res.status(500).send({
       success: false,
-      message: "Error in Get All Inventory",
+      message: "Error in Get Consumer Blood Records",
       err,
     });
   }
