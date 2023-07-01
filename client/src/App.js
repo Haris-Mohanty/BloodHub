@@ -10,6 +10,7 @@ import Donor from "./pages/dashboard/Donor";
 import Hospitals from "./pages/dashboard/Hospitals";
 import OrganisationPage from "./pages/dashboard/OrganisationPage";
 import Consumer from "./pages/dashboard/Consumer";
+import Donation from "./pages/dashboard/Donation";
 function App() {
   return (
     <>
@@ -44,6 +45,14 @@ function App() {
           element={
             <ProtectedRoutes>
               <Consumer />
+            </ProtectedRoutes>
+          }
+        />
+        <Route
+          path="/donation"
+          element={
+            <ProtectedRoutes>
+              <Donation />
             </ProtectedRoutes>
           }
         />
