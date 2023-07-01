@@ -13,9 +13,19 @@ const OrganisationPage = () => {
   //find org data
   const getOrganisations = async () => {
     try {
-      const { data } = await API("/inventory/get-organisation");
-      if (data?.success) {
-        setData(data?.organisations);
+      //check donor
+      if (user?.role === "donor") {
+        const { data } = await API("/inventory/get-organisation");
+        if (data?.success) {
+          setData(data?.organisations);
+        }
+      }
+      //check hospital
+      if (user?.role === "hospital") {
+        const { data } = await API("/inventory/get-organisation-for-hospital");
+        if (data?.success) {
+          setData(data?.organisations);
+        }
       }
     } catch (error) {
       console.log(error);
@@ -24,7 +34,7 @@ const OrganisationPage = () => {
 
   useEffect(() => {
     getOrganisations();
-  }, []);
+  }, [user]);
 
   return (
     <Layout>
