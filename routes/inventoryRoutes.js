@@ -27,4 +27,7 @@ router.get("/get-hospitals", authMiddleware, getHospitalsController);
 //Get Hospital Data
 router.get("/get-organisation", authMiddleware, getOrganisationController);
 
+//Get Organisation Data in Hospital Page
+router.get();
+
 module.exports = router;
