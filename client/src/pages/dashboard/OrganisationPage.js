@@ -6,8 +6,8 @@ import moment from "moment";
 
 const OrganisationPage = () => {
   //Get Current User
-  
-  
+  const { user } = useSelector((state) => state.auth);
+
   const [data, setData] = useState([]);
 
   //find org data
