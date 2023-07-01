@@ -15,7 +15,7 @@ const Donation = () => {
       const { data } = await API.post("/inventory/get-inventory-hospital", {
         filters: {
           inventoryType: "in",
-          hospital: user?._id,
+          donor: user?._id,
         },
       });
       //   console.log(data);
