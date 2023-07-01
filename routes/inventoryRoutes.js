@@ -28,6 +28,6 @@ router.get("/get-hospitals", authMiddleware, getHospitalsController);
 router.get("/get-organisation", authMiddleware, getOrganisationController);
 
 //Get Organisation Data in Hospital Page
-router.get();
+router.get("/get-organisation-for-hospital", authMiddleware);
 
 module.exports = router;
