@@ -9,11 +9,18 @@ const Analytics = () => {
   const getBloodGroupData = async () => {
     try {
       const { data } = await API.get("/analytics/bloodGroups-data");
-      
+      if (data?.success) {
+        setData(data?.BloodGroupData);
+        console.log(data);
+      }
     } catch (error) {
       console.log(error);
     }
   };
+  //LifeCycle method
+  useEffect(() => {
+    getBloodGroupData();
+  }, []);
   return (
     <>
       <Header />
