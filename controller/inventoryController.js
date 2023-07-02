@@ -248,8 +248,17 @@ const getInventoryHospitalController = async (req, res) => {
 //******* GET BLOOD RECORDS OF 3 *******/
 const getRecentInventoryController = async (req, res) => {
   try {
-    const inventory = await inventoryModel.find({
-      organisation: req.body.userId,
+    const inventory = await inventoryModel
+      .find({
+        organisation: req.body.userId,
+      })
+      .limit(3)
+      .sort({ createdAt: -1 });
+
+    return res.status(200).send({
+      success: true,
+      message: "Recent Inventory Data!",
+      inventory,
     });
   } catch (err) {
     console.log(err);
