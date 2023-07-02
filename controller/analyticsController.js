@@ -1,4 +1,5 @@
 const inventoryModel = require("../models/inventoryModel");
+const mongoose = require("mongoose");
 
 //******** GET BLOOD DATA *********/
 const bloodGroupDetailsController = async (req, res) => {
@@ -15,52 +16,54 @@ const bloodGroupDetailsController = async (req, res) => {
       "B-",
     ];
     const bloodGroupData = [];
-    const organisation = req.body.userId;
+    const organisation = new mongoose.Types.ObjectId(req.body.userId);
     //Get Signle Blood Group
-    await Promise.all(async (bloodGroup) => {
-      //Count Total "IN"
-      const totalIn = await inventoryModel.aggregate([
-        {
-          $match: {
-            bloodGroup: bloodGroup,
-            inventoryType: "in",
-            organisation,
+    await Promise.all(
+      bloodGroups.map(async (bloodGroup) => {
+        //Count Total "IN"
+        const totalIn = await inventoryModel.aggregate([
+          {
+            $match: {
+              bloodGroup: bloodGroup,
+              inventoryType: "in",
+              organisation,
+            },
           },
-        },
-        {
-          $group: {
-            _id: null,
-            total: { $sum: "$quantity" },
+          {
+            $group: {
+              _id: null,
+              total: { $sum: "$quantity" },
+            },
           },
-        },
-      ]);
-      //Count Total "OUT"
-      const totalOut = await inventoryModel.aggregate([
-        {
-          $match: {
-            bloodGroup: bloodGroup,
-            inventoryType: "out",
-            organisation,
+        ]);
+        //Count Total "OUT"
+        const totalOut = await inventoryModel.aggregate([
+          {
+            $match: {
+              bloodGroup: bloodGroup,
+              inventoryType: "out",
+              organisation,
+            },
           },
-        },
-        {
-          $group: {
-            _id: null,
-            total: { $sum: "$quantity" },
+          {
+            $group: {
+              _id: null,
+              total: { $sum: "$quantity" },
+            },
           },
-        },
-      ]);
-      //Calculate
-      const availableBlood =
-        (totalIn[0]?.total || 0) - (totalOut[0]?.total || 0);
-      //Push Data
-      bloodGroupData.push({
-        bloodGroup,
-        totalIn: totalIn[0]?.total || 0,
-        totalOut: totalOut[0]?.total || 0,
-        availableBlood,
-      });
-    });
+        ]);
+        //Calculate
+        const availableBlood =
+          (totalIn[0]?.total || 0) - (totalOut[0]?.total || 0);
+        //Push Data
+        bloodGroupData.push({
+          bloodGroup,
+          totalIn: totalIn[0]?.total || 0,
+          totalOut: totalOut[0]?.total || 0,
+          availableBlood,
+        });
+      })
+    );
 
     //Res
     return res.status(200).send({
