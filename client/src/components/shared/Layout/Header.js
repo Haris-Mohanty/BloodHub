@@ -1,11 +1,13 @@
 import React from "react";
 import {} from "react-icons/bi";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation, Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { toast } from "react-toastify";
 
 const Header = () => {
   const { user } = useSelector((state) => state.auth);
+
+  const location = useLocation();
 
   const navigate = useNavigate();
 
@@ -42,19 +44,23 @@ const Header = () => {
                     <span className="badge bg-secondary">{user?.role}</span>
                   </a>
                 </li>
-                <li className="nav-item">
-                  <a href="#" className="nav-link">
-                    Home
-                  </a>
-                </li>
+                {location.pathname === "/" ? (
+                  <li className="nav-item">
+                    <Link to="/analytics" className="nav-link">
+                      Analytics
+                    </Link>
+                  </li>
+                ) : (
+                  <li className="nav-item">
+                    <Link to="/" className="nav-link">
+                      Home
+                    </Link>
+                  </li>
+                )}
+
                 <li className="nav-item">
                   <a href="#" className="nav-link">
                     About
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a href="#" className="nav-link">
-                    Service
                   </a>
                 </li>
 
