@@ -8,7 +8,7 @@ const {
 const router = express.Router();
 
 //**** CREATE ROUTES ****/
-//Get Donor Records
-router.get("/get-donors", authMiddleware, bloodGroupDetailsController);
+//Get Blood Data
+router.get("/bloodGroups-data", authMiddleware, bloodGroupDetailsController);
 
 module.exports = router;
