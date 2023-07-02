@@ -245,6 +245,22 @@ const getInventoryHospitalController = async (req, res) => {
   }
 };
 
+//******* GET BLOOD RECORDS OF 3 *******/
+const getRecentInventoryController = async (req, res) => {
+  try {
+    const inventory = await inventoryModel.find({
+      
+    });
+  } catch (err) {
+    console.log(err);
+    return res.status(500).send({
+      success: false,
+      message: "Error In Recent Inventrory API!",
+      err,
+    });
+  }
+};
+
 //****** EXPORT *****/
 module.exports = {
   createInventoryController,
@@ -254,4 +270,5 @@ module.exports = {
   getOrganisationController,
   getOrganisationForHospitalController,
   getInventoryHospitalController,
+  getRecentInventoryController,
 };
