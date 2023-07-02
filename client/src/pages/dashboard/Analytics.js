@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
 import Header from "../../components/shared/Layout/Header";
 import API from "./../../services/API";
+import moment from "moment";
 
 const Analytics = () => {
-  const [data, setData] = useState([]);
+  const [inventoryData, setInventoryData] = useState([]); //RECENT
 
-  const [inventoryData, setInventoryData] = useState([]);
+  //******* SHOW BLOOD RECORDS (IN & OUT & CALCULATE) *********/
+  const [data, setData] = useState([]);
   const colors = [
     "#884A39",
     "#C38154",
@@ -23,7 +25,7 @@ const Analytics = () => {
       const { data } = await API.get("/analytics/bloodGroups-data");
       if (data?.success) {
         setData(data?.bloodGroupData);
-        console.log(data);
+        // console.log(data);
       }
     } catch (error) {
       console.log(error);
@@ -33,6 +35,24 @@ const Analytics = () => {
   useEffect(() => {
     getBloodGroupData();
   }, []);
+
+  //******* SHOW RECENT(LAST) 3 BLOOD RECORDS *********/
+  const getRecentBloodRecords = async () => {
+    try {
+      const { data } = await API.get("/inventory/get-recent-inventory");
+      if (data?.success) {
+        setInventoryData(data?.inventory);
+        console.log(data);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  //LifeCycle method
+  useEffect(() => {
+    getRecentBloodRecords();
+  }, []);
+
   return (
     <>
       <Header />
@@ -41,7 +61,11 @@ const Analytics = () => {
         <div className="col-md-2"></div>
         <div className="col-md-8 mt-5 d-flex flex-row flex-wrap">
           {data?.map((record, i) => (
-            <div className="card m-2 p-1" key={i} style={{ width: "18rem", backgroundColor:`${colors[i]}` }}>
+            <div
+              className="card m-2 p-1"
+              key={i}
+              style={{ width: "19rem", backgroundColor: `${colors[i]}` }}
+            >
               <div className="card-body">
                 <h1 className="card-title bg-light text-dark text-center mb-3 fw-bold">
                   {record.bloodGroup}
@@ -58,6 +82,40 @@ const Analytics = () => {
               </div>
             </div>
           ))}
+        </div>
+        <div className="col-md-2"></div>
+      </div>
+      <div className="row">
+        <div className="col-md-2"></div>
+        <div className="col-md-8">
+          <div className="container mt-3">
+            <table className="table table-striped">
+              <thead>
+                <tr className="red">
+                  <th scope="col">S/N</th>
+                  <th scope="col">BloodGroup</th>
+                  <th scope="col">InventoryType</th>
+                  <th scope="col">Quantity </th>
+                  <th scope="col">Email</th>
+                  <th scope="col">Date & Time</th>
+                </tr>
+              </thead>
+              <tbody className="category-list">
+                {inventoryData?.map((record, index) => (
+                  <tr key={record._id}>
+                    <td>{index + 1}</td>
+                    <td>{record.bloodGroup}</td>
+                    <td>{record.inventoryType}</td>
+                    <td>{record.quantity}(ML)</td>
+                    <td>{record.email}</td>
+                    <td>
+                      {moment(record.createdAt).format("DD/MM/YYYY hh:mm A")}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
         <div className="col-md-2"></div>
       </div>
