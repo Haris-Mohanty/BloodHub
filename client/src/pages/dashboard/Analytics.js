@@ -1,11 +1,13 @@
-import React from 'react'
+import React from "react";
+import Header from "../../components/shared/Layout/Header";
 
 const Analytics = () => {
   return (
-    <div>
-      
-    </div>
-  )
-}
+    <>
+      <Header />
+      <h1>Analytics Page</h1>
+    </>
+  );
+};
 
-export default Analytics
+export default Analytics;

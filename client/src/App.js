@@ -11,6 +11,7 @@ import Hospitals from "./pages/dashboard/Hospitals";
 import OrganisationPage from "./pages/dashboard/OrganisationPage";
 import Consumer from "./pages/dashboard/Consumer";
 import Donation from "./pages/dashboard/Donation";
+import Analytics from "./pages/dashboard/Analytics";
 function App() {
   return (
     <>
@@ -37,6 +38,14 @@ function App() {
           element={
             <ProtectedRoutes>
               <Hospitals />
+            </ProtectedRoutes>
+          }
+        />
+        <Route
+          path="/analytics"
+          element={
+            <ProtectedRoutes>
+              <Analytics />
             </ProtectedRoutes>
           }
         />
