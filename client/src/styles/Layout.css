@@ -54,7 +54,7 @@
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #ff7e7e;
+  background-color: #ffffff;
 }
 /* fix table head */
 table {
