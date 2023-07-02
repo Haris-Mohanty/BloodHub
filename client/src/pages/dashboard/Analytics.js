@@ -4,6 +4,8 @@ import API from "./../../services/API";
 
 const Analytics = () => {
   const [data, setData] = useState([]);
+
+  const [inventoryData, setInventoryData] = useState([]);
   const colors = [
     "#884A39",
     "#C38154",
