@@ -249,7 +249,7 @@ const getInventoryHospitalController = async (req, res) => {
 const getRecentInventoryController = async (req, res) => {
   try {
     const inventory = await inventoryModel.find({
-      
+      organisation: req.body.userId,
     });
   } catch (err) {
     console.log(err);
