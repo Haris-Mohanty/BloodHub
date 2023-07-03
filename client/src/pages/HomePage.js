@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import Spinner from "../components/shared/Spinner";
 import { toast } from "react-toastify";
 import Layout from "../components/shared/Layout/Layout";
@@ -8,7 +9,9 @@ import API from "../services/API";
 import moment from "moment";
 
 const HomePage = () => {
-  const { loading, error } = useSelector((state) => state.auth);
+  const { loading, error, user } = useSelector((state) => state.auth);
+
+  const navigate = useNavigate();
 
   // **Show records in page ***/
   const [data, setData] = useState([]);
@@ -31,6 +34,12 @@ const HomePage = () => {
 
   return (
     <Layout>
+      {user?.role === "admin" && navigate("/admin")}
+
+      {user?.role === "donor" && navigate("/organisation")}
+
+      {user?.role === "hospital" && navigate("/organisation")}
+
       {error && <span>{toast.error(error)}</span>}
       {loading ? (
         <Spinner />

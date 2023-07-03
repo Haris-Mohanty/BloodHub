@@ -15,6 +15,7 @@ import Analytics from "./pages/dashboard/Analytics";
 import OrganisationList from "./pages/Admin/OrganisationList";
 import DonorList from "./pages/Admin/DonorList";
 import HospitalList from "./pages/Admin/HospitalList";
+import AdminHome from "./pages/Admin/AdminHome";
 function App() {
   return (
     <>
@@ -73,6 +74,14 @@ function App() {
           element={
             <ProtectedRoutes>
               <OrganisationPage />
+            </ProtectedRoutes>
+          }
+        />
+        <Route
+          path="/admin"
+          element={
+            <ProtectedRoutes>
+              <AdminHome />
             </ProtectedRoutes>
           }
         />
