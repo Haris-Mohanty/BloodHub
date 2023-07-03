@@ -4,7 +4,7 @@ import Layout from "./../../components/shared/Layout/Layout";
 const DonorList = () => {
   return (
     <Layout>
-      <h>Donor List</h>
+      <h1>Donor List</h1>
     </Layout>
   );
 };
