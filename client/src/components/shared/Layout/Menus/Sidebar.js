@@ -52,11 +52,11 @@ const Sidebar = () => {
 
               <div
                 className={`menu-item ${
-                  location.pathname === "/donor" && "active"
+                  location.pathname === "/donor-list" && "active"
                 }`}
               >
                 <i className="fa-solid fa-hand-holding-medical"></i>
-                <Link to="/donor">Donor</Link>
+                <Link to="/donor-list">Donor List</Link>
               </div>
 
               <div
