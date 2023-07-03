@@ -38,10 +38,10 @@ const OrganisationPage = () => {
 
   return (
     <Layout>
-      <h2 className="mt-5 mb-4 fw-bold text-primary">Organisation Details</h2>
+      <h2 className="mt-5 mb-4 fw-bold text-primary font-sofias">Organisation Details</h2>
       <hr />
 
-      <table className="table table-striped">
+      <table className="table table-striped font-Lato">
         <thead>
           <tr className="blue">
             <th scope="col">S/N</th>

@@ -47,7 +47,7 @@ const HomePage = () => {
         <>
         
           <h2
-            className="main-page mt-5 mb-5 text-info fw-bold"
+            className="main-page mt-5 mb-5 text-info fw-bold font-Audiowide"
             data-bs-toggle="modal"
             data-bs-target="#staticBackdrop"
           >
@@ -57,9 +57,9 @@ const HomePage = () => {
           <hr/>
 
           
-            <table className="table table-striped">
+            <table className="table table-striped font-Lato">
               <thead>
-                <tr className="red">
+                <tr className="red fw-bold font-sofias">
                   <th scope="col">S/N</th>
                   <th scope="col">BloodGroup</th>
                   <th scope="col">InventoryType</th>

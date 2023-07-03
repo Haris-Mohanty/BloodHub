@@ -67,7 +67,7 @@ const Header = () => {
                 </li>
 
                 <div className="dropdown btn-group shadow-sm ml-auto">
-                  <button className="btn btn-danger" onClick={handleLogout}>
+                  <button className="btn btn-danger font-Audiowide" onClick={handleLogout}>
                     <i className="fa-solid fa-right-from-bracket"></i>
                     Logout
                   </button>

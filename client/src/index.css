@@ -60,6 +60,23 @@
   margin-top: 67px;
 }
 
+ul {
+  list-style: square outside none;
+}
+
+.font-sofias{
+  font-family: "Sofia", sans-serif;
+}
+.font-Audiowide{
+  font-family: "Audiowide", sans-serif;
+}
+.font-Lato{
+  font-family: "Lato", sans-serif;
+}
+.font-playfair{
+  font-family: "Playfair", sans-serif;
+}
+
 
 @media screen and (max-width: 768px) {
   .home-con {

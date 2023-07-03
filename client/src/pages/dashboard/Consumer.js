@@ -32,10 +32,10 @@ const Consumer = () => {
   }, []);
   return (
     <Layout>
-      <h1 className="mt-5 mb-4 fw-bold text-success">Consumer Details</h1>
+      <h1 className="mt-5 mb-4 fw-bold text-success font-sofias">Consumer Details</h1>
       <hr />
 
-      <table className="table table-striped">
+      <table className="table table-striped font-Lato">
         <thead>
           <tr className="green">
             <th scope="col">S/N</th>

@@ -67,7 +67,7 @@ const Analytics = () => {
               style={{ width: "19rem", backgroundColor: `${colors[i]}` }}
             >
               <div className="card-body">
-                <h1 className="card-title bg-light text-dark text-center mb-3 fw-bold">
+                <h1 className="card-title font-playfair bg-light text-dark text-center mb-3 fw-bold">
                   {record.bloodGroup}
                 </h1>
                 <p className="card-text text-light">
@@ -89,10 +89,10 @@ const Analytics = () => {
       <div className="row">
         <div className="col-md-2"></div>
         <div className="col-md-8 mt-3">
-            <h2 className="fw-bold text-primary mt-3">Show Recent Blood Records</h2>
+            <h2 className="fw-bold text-primary font-sofias mt-3">Show Recent Blood Records</h2>
             <hr/>
           <div className="container mt-3">
-            <table className="table table-striped">
+            <table className="table table-striped font-Lato">
               <thead>
                 <tr className="red">
                   <th scope="col">S/N</th>
