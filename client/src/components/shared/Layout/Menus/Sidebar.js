@@ -44,13 +44,6 @@ const Sidebar = () => {
           {user?.role === "admin" && (
             <>
               <div
-                className={`menu-item ${location.pathname === "/" && "active"}`}
-              >
-                <i className="fa-solid fa-warehouse"></i>
-                <Link to="/">Inventory</Link>
-              </div>
-
-              <div
                 className={`menu-item ${
                   location.pathname === "/donor-list" && "active"
                 }`}
@@ -61,11 +54,18 @@ const Sidebar = () => {
 
               <div
                 className={`menu-item ${
-                  location.pathname === "/hospital" && "active"
+                  location.pathname === "/hospital-list" && "active"
                 }`}
               >
                 <i className="fa-solid fa-hospital"></i>
-                <Link to="/hospital">Hospital</Link>
+                <Link to="/hospital-list">Hospital List</Link>
+              </div>
+
+              <div
+                className={`menu-item ${location.pathname === "/org-list" && "active"}`}
+              >
+                <i className="fa-solid fa-warehouse"></i>
+                <Link to="/org-list">Organisation List</Link>
               </div>
             </>
           )}
