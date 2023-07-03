@@ -85,9 +85,12 @@ const Analytics = () => {
         </div>
         <div className="col-md-2"></div>
       </div>
+      
       <div className="row">
         <div className="col-md-2"></div>
-        <div className="col-md-8">
+        <div className="col-md-8 mt-3">
+            <h2 className="fw-bold text-primary mt-3">Show Recent Blood Records</h2>
+            <hr/>
           <div className="container mt-3">
             <table className="table table-striped">
               <thead>
