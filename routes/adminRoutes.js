@@ -13,5 +13,8 @@ router.get("/donor-list", authMiddleware, adminMiddleware, getDonorsListControll
 //GET HOSPITAL LIST
 router.get("/hospital-list", authMiddleware, adminMiddleware, getHospitalListController);
 
+//GET ORGANISATION DATA
+
+
 //Export
 module.exports = router;

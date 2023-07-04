@@ -44,7 +44,26 @@ const getHospitalListController = async (req, res) => {
 };
 
 //ORGANISATION LIST
-const getOrganisationListController = () => {};
+const getOrganisationListController = async (req, res) => {
+  try {
+    const organisationList = await userModel
+      .find({ role: "organisation" })
+      .sort({ createdAt: -1 });
+    return res.status(200).send({
+      success: true,
+      totalCount: organisationList.length,
+      message: "Organisation List Fetched Successfully!",
+      organisationList,
+    });
+  } catch (error) {
+    console.log(error);
+    return res.status(500).send({
+      success: false,
+      message: "Error in Organisation List API!",
+      error,
+    });
+  }
+};
 
 //Export
 module.exports = { getDonorsListController, getHospitalListController };
