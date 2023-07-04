@@ -10,5 +10,8 @@ const router = express.Router();
 //GET DONOR LIST
 router.get("/donor-list", authMiddleware, adminMiddleware, getDonorsListController);
 
+//GET HOSPITAL LIST
+router.get("/hospital-list", authMiddleware, adminMiddleware, )
+
 //Export
 module.exports = router;
