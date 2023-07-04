@@ -10,3 +10,4 @@ const router = express.Router();
 router.get("/donor-list", authMiddleware, getDonorsListController);
 
 //Export
+module.exports = router;
