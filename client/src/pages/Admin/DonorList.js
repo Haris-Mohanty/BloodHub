@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Layout from "./../../components/shared/Layout/Layout";
 import API from "../../services/API";
+import moment from "moment";
 
 const DonorList = () => {
   const [data, setData] = useState([]);
@@ -9,7 +10,7 @@ const DonorList = () => {
     try {
       const { data } = await API.get("/admin/donor-list");
       if (data?.success) {
-        setData(data?.donosr);
+        setData(data?.donorData);
         console.log(data);
       }
     } catch (error) {
@@ -33,13 +34,21 @@ const DonorList = () => {
             <th scope="col">Name</th>
             <th scope="col">Email</th>
             <th scope="col">MobileNo. </th>
+            <th scope="col">Address </th>
             <th scope="col">Date & Time</th>
           </tr>
         </thead>
         <tbody className="category-list">
-          <tr>
-            <td></td>
-          </tr>
+          {data?.map((record, index) => (
+            <tr key={record._id}>
+              <td>{index + 1}</td>
+              <td>{record.name}</td>
+              <td>{record.email}</td>
+              <td>{record.phone}</td>
+              <td>{record.address}</td>
+              <td>{moment(record.createdAt).format("DD/MM/YYYY hh:mm A")}</td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </Layout>
