@@ -66,4 +66,8 @@ const getOrganisationListController = async (req, res) => {
 };
 
 //Export
-module.exports = { getDonorsListController, getHospitalListController };
+module.exports = {
+  getDonorsListController,
+  getHospitalListController,
+  getOrganisationListController,
+};
