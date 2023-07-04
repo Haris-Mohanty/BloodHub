@@ -44,4 +44,4 @@ const getHospitalListController = async (req, res) => {
 };
 
 //Export
-module.exports = { getDonorsListController };
+module.exports = { getDonorsListController, getHospitalListController };
