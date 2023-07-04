@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Layout from "../../components/shared/Layout/Layout";
 import API from "../../services/API";
+import moment from "moment";
 
 const HospitalList = () => {
   const [data, setData] = useState([]);
@@ -43,10 +44,11 @@ const HospitalList = () => {
           {data?.map((record, index) => (
             <tr key={record._id}>
               <td>{index + 1}</td>
-              <td>{record.name}</td>
+              <td>{record.hospitalName}</td>
               <td>{record.email}</td>
-              <td>{record.name}</td>
-              <td>{record.name}</td>
+              <td>{record.phone}</td>
+              <td>{record.address}</td>
+              <td>{moment(record.createdAt).format("DD/MM/YYYY hh:mm A")}</td>
             </tr>
           ))}
         </tbody>
