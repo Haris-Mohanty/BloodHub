@@ -29,7 +29,9 @@ const getHospitalListController = async (req, res) => {
       .sort({ createdAt: -1 });
     return res.status(200).send({
       success: true,
-      message:""
+      totalCount: hospitalData.length,
+      message: "Hospital List Fetched Successfully!",
+      hospitalData,
     });
   } catch (error) {
     console.log(error);
