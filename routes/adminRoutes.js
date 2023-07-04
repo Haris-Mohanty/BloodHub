@@ -14,7 +14,7 @@ router.get("/donor-list", authMiddleware, adminMiddleware, getDonorsListControll
 router.get("/hospital-list", authMiddleware, adminMiddleware, getHospitalListController);
 
 //GET ORGANISATION DATA
-router.get("/organisationlist", authMiddleware, adminMiddleware, getOrganisationListController);
+router.get("/organisation-list", authMiddleware, adminMiddleware, getOrganisationListController);
 
 //Export
 module.exports = router;
