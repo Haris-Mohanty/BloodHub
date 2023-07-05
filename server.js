@@ -27,6 +27,14 @@ app.use("/api/v1/inventory", require("./routes/inventoryRoutes"));
 app.use("/api/v1/analytics", require("./routes/analyticsRoutes"));
 app.use("/api/v1/admin", require("./routes/adminRoutes"));
 
+//STATIC FILES
+app.use(express.static(path.join(__dirname, "./client/build")));
+
+//STATIC ROUTES
+app.get("*", function (req, res) {
+  res.sendFile(path.join(__dirname, "./client/build/index.html"));
+});
+
 //***** PORT *****/
 const PORT = process.env.PORT || 8080;
 
