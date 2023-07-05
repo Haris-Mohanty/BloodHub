@@ -46,7 +46,7 @@ const HospitalList = () => {
         })
         .then(async (result) => {
           if (result.isConfirmed) {
-            await API.delete(`/admin/delete-organisation/${id}`);
+            await API.delete(`/admin/delete-hospital/${id}`);
             setTimeout(() => {
               window.location.reload();
             }, 1000);
