@@ -24,7 +24,9 @@ const DonorList = () => {
 
   return (
     <Layout>
-      <h1 className="mt-5 mb-4 fw-bold text-success font-sofias">Donor - List</h1>
+      <h1 className="mt-5 mb-4 fw-bold text-success font-sofias">
+        Donor - List
+      </h1>
       <hr />
 
       <table className="table table-striped font-Lato">
@@ -36,6 +38,7 @@ const DonorList = () => {
             <th scope="col">MobileNo. </th>
             <th scope="col">Address </th>
             <th scope="col">Date & Time</th>
+            <th scope="col">Action</th>
           </tr>
         </thead>
         <tbody className="category-list">
@@ -47,6 +50,7 @@ const DonorList = () => {
               <td>{record.phone}</td>
               <td>{record.address}</td>
               <td>{moment(record.createdAt).format("DD/MM/YYYY hh:mm A")}</td>
+              <td><button className="btn btn-danger"><i className="fa-solid fa-trash"></i></button></td>
             </tr>
           ))}
         </tbody>
