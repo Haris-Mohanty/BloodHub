@@ -22,6 +22,9 @@ const DonorList = () => {
     getDonors();
   }, []);
 
+  ///******* DELETE DONOR RECORD ******/
+  
+
   return (
     <Layout>
       <h1 className="mt-5 mb-4 fw-bold text-success font-sofias">
