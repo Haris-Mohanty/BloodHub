@@ -10,7 +10,6 @@ const OrganisationList = () => {
 
     if (data?.success) {
       setData(data?.organisationList);
-      console.log(data)
     }
   };
 
@@ -24,6 +23,22 @@ const OrganisationList = () => {
         Organisation - List
       </h2>
       <hr />
+
+      <table className="table table-striped font-Lato">
+        <thead>
+          <tr className="blue">
+            <th scope="col">S/N</th>
+            <th scope="col">OrgName</th>
+            <th scope="col">OrgEmail</th>
+            <th scope="col">MobileNo. </th>
+            <th scope="col">Address </th>
+            <th scope="col">Date & Time</th>
+          </tr>
+        </thead>
+        <tbody className="category-list">
+          
+        </tbody>
+      </table>
     </Layout>
   );
 };
