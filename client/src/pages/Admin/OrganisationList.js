@@ -36,7 +36,9 @@ const OrganisationList = () => {
           </tr>
         </thead>
         <tbody className="category-list">
-          
+          <tr>
+            <td></td>
+          </tr>
         </tbody>
       </table>
     </Layout>
