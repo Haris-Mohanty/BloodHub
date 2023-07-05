@@ -11,7 +11,7 @@ const DonorList = () => {
       const { data } = await API.get("/admin/donor-list");
       if (data?.success) {
         setData(data?.donorData);
-        console.log(data);
+        // console.log(data);
       }
     } catch (error) {
       console.log(error);
