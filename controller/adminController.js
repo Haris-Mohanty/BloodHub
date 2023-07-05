@@ -65,6 +65,9 @@ const getOrganisationListController = async (req, res) => {
   }
 };
 
+//******** DELETE DONOR *********/
+
+
 //Export
 module.exports = {
   getDonorsListController,
