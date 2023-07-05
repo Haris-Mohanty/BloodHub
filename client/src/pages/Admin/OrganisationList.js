@@ -10,6 +10,7 @@ const OrganisationList = () => {
 
     if (data?.success) {
       setData(data?.organisationList);
+      console.log(data)
     }
   };
 
