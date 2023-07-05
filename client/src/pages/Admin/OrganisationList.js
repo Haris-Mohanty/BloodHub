@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Layout from "../../components/shared/Layout/Layout";
 import API from "../../services/API";
+import moment from "moment";
 
 const OrganisationList = () => {
   const [data, setData] = useState([]);
@@ -36,9 +37,16 @@ const OrganisationList = () => {
           </tr>
         </thead>
         <tbody className="category-list">
-          <tr>
-            <td></td>
-          </tr>
+          {data?.map((record, index) => (
+            <tr key={record._id}>
+              <td>{index + 1}</td>
+              <td>{record.organisationName}</td>
+              <td>{record.email}</td>
+              <td>{record.phone}</td>
+              <td>{record.address}</td>
+              <td>{moment(record.createdAt).format("DD/MM/YYYY hh:mm A")}</td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </Layout>
