@@ -37,6 +37,7 @@ const HospitalList = () => {
             <th scope="col">Email</th>
             <th scope="col">MobileNo. </th>
             <th scope="col">Address </th>
+            <th scope="col">Action </th>
             <th scope="col">Date & Time</th>
           </tr>
         </thead>
@@ -49,6 +50,14 @@ const HospitalList = () => {
               <td>{record.phone}</td>
               <td>{record.address}</td>
               <td>{moment(record.createdAt).format("DD/MM/YYYY hh:mm A")}</td>
+              <td>
+                <button
+                  className="btn btn-danger py-2"
+                  onClick={() => handleDelete(record._id)}
+                >
+                  <i className="fa-solid fa-trash"></i>Delete
+                </button>
+              </td>
             </tr>
           ))}
         </tbody>
