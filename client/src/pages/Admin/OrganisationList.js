@@ -42,7 +42,7 @@ const OrganisationList = () => {
         })
         .then(async (result) => {
           if (result.isConfirmed) {
-            await API.delete(`/admin/delete-donor/${id}`);
+            await API.delete(`/admin/delete-organisation/${id}`);
             setTimeout(() => {
               window.location.reload();
             }, 1000);

@@ -82,6 +82,23 @@ const deleteDonorController = async (req, res) => {
     });
   }
 };
+//******** DELETE ORGANISATION *********/
+const deleteOrganisationController = async (req, res) => {
+  try {
+    await userModel.findByIdAndDelete(req.params.id);
+    return res.status(200).send({
+      success: true,
+      message: "Organisation Record Deleted Successfully!",
+    });
+  } catch (error) {
+    console.log(error);
+    return res.status(500).send({
+      success: false,
+      message: "Error in Delete Organisation API!",
+      error,
+    });
+  }
+};
 
 //Export
 module.exports = {
@@ -89,4 +106,5 @@ module.exports = {
   getHospitalListController,
   getOrganisationListController,
   deleteDonorController,
+  deleteOrganisationController,
 };
