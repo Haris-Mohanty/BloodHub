@@ -59,19 +59,14 @@ Contributions are welcome!
 
 This project is licensed under the MIT.
 
-## Acknowledgments
-
-- Thanks to all our contributors who make BloodHub possible.
-
 ## Contact
 
-- If you have any questions or suggestions, please email us at harismohanty8658@gmail.com
+- If you have any questions or suggestions, please email me at harismohanty8658@gmail.com
 
 
 ## Visit Link
 
 - https://blood-hub.netlify.app/
 
-
-Thank You!
+## Thank You!
 
